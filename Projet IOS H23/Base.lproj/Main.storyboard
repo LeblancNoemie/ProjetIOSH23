@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Accueil View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AccueilViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,11 +77,11 @@
             </objects>
             <point key="canvasLocation" x="-25" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Project View Controller-->
         <scene sceneID="uY1-Qs-RTk">
             <objects>
-                <viewController id="57G-3B-02F" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7bd-YA-Xgv">
+                <viewController id="57G-3B-02F" customClass="CreateProjectViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bd-YA-Xgv" customClass="CreateProject">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -102,11 +102,11 @@
             </objects>
             <point key="canvasLocation" x="963.76811594202911" y="110.49107142857143"/>
         </scene>
-        <!--View Controller-->
+        <!--Manage Project View Controller-->
         <scene sceneID="t8z-Tq-DBI">
             <objects>
-                <viewController id="vP8-5z-PRz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OQa-Hh-4kw">
+                <viewController id="vP8-5z-PRz" customClass="ManageProjectViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OQa-Hh-4kw" customClass="Pro">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -178,10 +178,10 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             </objects>
             <point key="canvasLocation" x="1705.7971014492755" y="109.82142857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Depense View Controller-->
         <scene sceneID="G4K-xa-cyD">
             <objects>
-                <viewController id="q3b-4o-s63" sceneMemberID="viewController">
+                <viewController id="q3b-4o-s63" customClass="AddDepenseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j2Y-5o-uu2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,10 +264,10 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             </objects>
             <point key="canvasLocation" x="2755" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Compte View Controller-->
         <scene sceneID="KEb-e0-W8d">
             <objects>
-                <viewController id="5AP-kB-9gF" sceneMemberID="viewController">
+                <viewController id="5AP-kB-9gF" customClass="CompteViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEX-wo-YA6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,10 +334,10 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             </objects>
             <point key="canvasLocation" x="964" y="901"/>
         </scene>
-        <!--View Controller-->
+        <!--Compte Details View Controller-->
         <scene sceneID="n7J-xY-QEa">
             <objects>
-                <viewController id="tE2-fG-djJ" sceneMemberID="viewController">
+                <viewController id="tE2-fG-djJ" customClass="CompteDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZgR-T9-F32">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -381,10 +381,10 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             </objects>
             <point key="canvasLocation" x="1706" y="901"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Convention View Controller-->
         <scene sceneID="S7r-pt-zs5">
             <objects>
-                <viewController id="0cx-5w-8ef" sceneMemberID="viewController">
+                <viewController id="0cx-5w-8ef" customClass="AddConventionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igh-ZZ-BFn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -470,7 +470,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fip-cs-Px5"/>
-        <segue reference="QqB-XX-Gpf"/>
+        <segue reference="rKf-GU-1qE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
