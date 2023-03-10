@@ -32,8 +32,7 @@ class DataManager {
         let p2 = Projet(context:context)
         p2.nom = "Les Jardins Mercier"
         p2.id = 101
-         
-         
+                 
          do{
              try context.save()
          }catch{
