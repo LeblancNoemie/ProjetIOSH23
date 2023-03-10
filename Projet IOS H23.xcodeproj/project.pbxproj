@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900829BBB94600382F4D /* Accueil2ViewController.swift */; };
+		2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */; };
+		2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */; };
+		2608901029BBBAB100382F4D /* CompteDetails2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900F29BBBAB100382F4D /* CompteDetails2ViewController.swift */; };
+		2608901229BBBACD00382F4D /* Compte2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901129BBBACD00382F4D /* Compte2ViewController.swift */; };
+		2608901429BBBAE400382F4D /* CreateProject2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */; };
+		2608901629BBBAF900382F4D /* ManageProject2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */; };
 		26E1B6AC29B8CA7A0026FBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */; };
 		26E1B6AE29B8CA7A0026FBEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */; };
 		26E1B6B029B8CA7A0026FBEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AF29B8CA7A0026FBEC /* ViewController.swift */; };
@@ -18,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2608900829BBB94600382F4D /* Accueil2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accueil2ViewController.swift; sourceTree = "<group>"; };
+		2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConvention2ViewController.swift; sourceTree = "<group>"; };
+		2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepense2ViewController.swift; sourceTree = "<group>"; };
+		2608900F29BBBAB100382F4D /* CompteDetails2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompteDetails2ViewController.swift; sourceTree = "<group>"; };
+		2608901129BBBACD00382F4D /* Compte2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compte2ViewController.swift; sourceTree = "<group>"; };
+		2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProject2ViewController.swift; sourceTree = "<group>"; };
+		2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProject2ViewController.swift; sourceTree = "<group>"; };
 		26E1B6A829B8CA7A0026FBEC /* Projet IOS H23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOS H23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +83,13 @@
 				26E1B6B929B8CAA20026FBEC /* LaunchScreen.storyboard */,
 				26E1B6BC29B8CAA20026FBEC /* Info.plist */,
 				26E1B6B429B8CA7A0026FBEC /* Projet_IOS_H23.xcdatamodeld */,
+				2608900829BBB94600382F4D /* Accueil2ViewController.swift */,
+				2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */,
+				2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */,
+				2608900F29BBBAB100382F4D /* CompteDetails2ViewController.swift */,
+				2608901129BBBACD00382F4D /* Compte2ViewController.swift */,
+				2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */,
+				2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */,
 			);
 			path = "Projet IOS H23";
 			sourceTree = "<group>";
@@ -145,9 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2608901029BBBAB100382F4D /* CompteDetails2ViewController.swift in Sources */,
 				26E1B6B029B8CA7A0026FBEC /* ViewController.swift in Sources */,
+				2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */,
+				2608901229BBBACD00382F4D /* Compte2ViewController.swift in Sources */,
+				2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */,
+				2608901629BBBAF900382F4D /* ManageProject2ViewController.swift in Sources */,
 				26E1B6B629B8CA7A0026FBEC /* Projet_IOS_H23.xcdatamodeld in Sources */,
 				26E1B6AC29B8CA7A0026FBEC /* AppDelegate.swift in Sources */,
+				2608901429BBBAE400382F4D /* CreateProject2ViewController.swift in Sources */,
+				2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */,
 				26E1B6AE29B8CA7A0026FBEC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

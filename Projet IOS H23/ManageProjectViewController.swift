@@ -1,5 +1,5 @@
 //
-//  AccueilViewController.swift
+//  ManageProjectViewController.swift
 //  Projet IOS H23
 //
 //  Created by Noemie Leblanc Lessard on 2023-03-10.
@@ -7,8 +7,13 @@
 
 import UIKit
 
-class AccueilViewController: UITableViewController {
+class ManageProjectViewController: UITableViewController {
 
+    @IBOutlet weak var totalSpending: UILabel!
+    @IBOutlet weak var projectName: UILabel!
+    @IBOutlet weak var spendingList: UILabel! //Changer pour une liste déroulante de dépenses avec échéance
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
