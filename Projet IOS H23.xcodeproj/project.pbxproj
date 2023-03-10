@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7F3AF429BBBF8D00B0633D /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F3AF329BBBF8D00B0633D /* test.txt */; };
 		2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900829BBB94600382F4D /* Accueil2ViewController.swift */; };
 		2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */; };
 		2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F7F3AF329BBBF8D00B0633D /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		2608900829BBB94600382F4D /* Accueil2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accueil2ViewController.swift; sourceTree = "<group>"; };
 		2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConvention2ViewController.swift; sourceTree = "<group>"; };
 		2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepense2ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				2608901129BBBACD00382F4D /* Compte2ViewController.swift */,
 				2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */,
 				2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */,
+				0F7F3AF329BBBF8D00B0633D /* test.txt */,
 			);
 			path = "Projet IOS H23";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				26E1B6C329B8CC2E0026FBEC /* BLL in Resources */,
 				26E1B6B829B8CAA20026FBEC /* Assets.xcassets in Resources */,
 				26E1B6B329B8CA7A0026FBEC /* Main.storyboard in Resources */,
+				0F7F3AF429BBBF8D00B0633D /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
