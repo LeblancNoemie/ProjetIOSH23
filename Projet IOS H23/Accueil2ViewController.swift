@@ -11,6 +11,7 @@ class Accueil2ViewController: UIViewController {
     @IBOutlet weak var pp1: UIButton!
     @IBOutlet weak var pp2: UIButton!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

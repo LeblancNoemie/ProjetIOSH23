@@ -68,18 +68,26 @@
                                     <segue destination="vP8-5z-PRz" kind="show" id="rKf-GU-1qE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AJ-aC-04s">
+                                <rect key="frame" x="51" y="656" width="324" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="labelTest" destination="3AJ-aC-04s" id="EgM-Em-K6V"/>
                         <outlet property="pp1" destination="ENv-KH-BOW" id="Bh9-Ra-3Jf"/>
                         <outlet property="pp2" destination="tkO-FO-oKm" id="n3O-5f-5eS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="110"/>
+            <point key="canvasLocation" x="-26.086956521739133" y="109.82142857142857"/>
         </scene>
         <!--Create Project2 View Controller-->
         <scene sceneID="uY1-Qs-RTk">

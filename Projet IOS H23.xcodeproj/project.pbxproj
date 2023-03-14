@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F7F3AF429BBBF8D00B0633D /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F3AF329BBBF8D00B0633D /* test.txt */; };
 		2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900829BBB94600382F4D /* Accueil2ViewController.swift */; };
 		2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */; };
 		2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F7F3AF329BBBF8D00B0633D /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		2608900829BBB94600382F4D /* Accueil2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accueil2ViewController.swift; sourceTree = "<group>"; };
 		2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConvention2ViewController.swift; sourceTree = "<group>"; };
 		2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepense2ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		263B0F2629C131A4008C79DB /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				2608901B29BBC03900382F4D /* DataManager.swift */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
 		26E1B69F29B8CA7A0026FBEC = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +82,8 @@
 		26E1B6AA29B8CA7A0026FBEC /* Projet IOS H23 */ = {
 			isa = PBXGroup;
 			children = (
+				263B0F2629C131A4008C79DB /* DAL */,
 				26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */,
-				2608901B29BBC03900382F4D /* DataManager.swift */,
 				26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */,
 				26E1B6AF29B8CA7A0026FBEC /* ViewController.swift */,
 				26E1B6B129B8CA7A0026FBEC /* Main.storyboard */,
@@ -92,7 +98,6 @@
 				2608901129BBBACD00382F4D /* Compte2ViewController.swift */,
 				2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */,
 				2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */,
-				0F7F3AF329BBBF8D00B0633D /* test.txt */,
 			);
 			path = "Projet IOS H23";
 			sourceTree = "<group>";
@@ -158,7 +163,6 @@
 				26E1B6BB29B8CAA20026FBEC /* LaunchScreen.storyboard in Resources */,
 				26E1B6B829B8CAA20026FBEC /* Assets.xcassets in Resources */,
 				26E1B6B329B8CA7A0026FBEC /* Main.storyboard in Resources */,
-				0F7F3AF429BBBF8D00B0633D /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

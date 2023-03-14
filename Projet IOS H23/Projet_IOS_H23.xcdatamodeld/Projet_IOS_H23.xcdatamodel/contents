@@ -24,7 +24,7 @@
         <relationship name="compte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Compte" inverseName="depenses" inverseEntity="Compte"/>
         <relationship name="projet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Projet" inverseName="depenses" inverseEntity="Projet"/>
     </entity>
-    <entity name="Projet" representedClassName="Projet" syncable="YES" codeGenerationType="class">
+    <entity name="Projet" representedClassName=".Projet" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nom" optional="YES" attributeType="String"/>
         <relationship name="compte" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Compte" inverseName="projet" inverseEntity="Compte"/>
@@ -35,6 +35,6 @@
         <element name="Compte" positionX="94.8201904296875" positionY="-261.7992248535156" width="128" height="119"/>
         <element name="Convention" positionX="-170.6383666992188" positionY="-258.2879028320312" width="128" height="119"/>
         <element name="Depense" positionX="339.07080078125" positionY="-257.3238220214844" width="128" height="119"/>
-        <element name="Projet" positionX="113.0086669921875" positionY="-4.921142578125" width="128" height="104"/>
+        <element name="Projet" positionX="113.0086669921875" positionY="-4.921142578125" width="128" height="118"/>
     </elements>
 </model>
