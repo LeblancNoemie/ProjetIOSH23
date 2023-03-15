@@ -153,7 +153,7 @@
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH1-sj-DgP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH1-sj-DgP" userLabel="totalSpending">
                                 <rect key="frame" x="258" y="423" width="148" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -198,12 +198,6 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="vZi-oO-Pjs"/>
-                    <connections>
-                        <outlet property="ggg" destination="kH1-sj-DgP" id="EgP-gB-GTj"/>
-                        <outlet property="projectName" destination="DOt-Fn-URb" id="GUa-2d-nTq"/>
-                        <outlet property="spendingList" destination="xw9-R4-YI7" id="5zJ-rd-P8Q"/>
-                        <outlet property="totalSpending" destination="kH1-sj-DgP" id="hZg-J4-Tf4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qz-gf-9fD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
