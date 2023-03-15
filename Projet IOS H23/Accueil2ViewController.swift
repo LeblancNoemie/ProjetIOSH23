@@ -11,12 +11,26 @@ class Accueil2ViewController: UIViewController {
     @IBOutlet weak var pp1: UIButton!
     @IBOutlet weak var pp2: UIButton!
     
-
+    var name = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onClickButton(_ sender: UIButton) {
+        name = sender.titleLabel!.text!
+        performSegue(withIdentifier: "projetButtonToProjectManage", sender: self)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "projetButtonToProjectManage") {
+            let vc = segue.destination as! ManageProject2ViewController
+            vc.projectName = name
+        }
+    }
+     
 }
