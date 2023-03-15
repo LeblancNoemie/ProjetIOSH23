@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreData
+
 class ConventionsDataManager{
     
     static let shared = ConventionsDataManager()

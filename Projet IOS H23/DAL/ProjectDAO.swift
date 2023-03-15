@@ -26,24 +26,11 @@ class ProjectDAO : IProjectDAO{
     }
     
     func getProjectByName(name: String) -> Projet {
-        var res : Projet = Projet()
-        for project in ProjectDataManager.shared.getAllProjects(){
-            if project.nom == name {
-                res = project
-            }
-        }
-        return res
+        return ProjectDataManager.shared.getProjectByName(name: name)
     }
     
     func getProjetById(id: Int16) -> Projet {
-        var res : Projet = Projet()
-        for project in ProjectDataManager.shared.getAllProjects(){
-            if project.id == id {
-                res = project
-            }
-        }
-        return res
-        
+        return ProjectDataManager.shared.getProjectById(id: id)
     }
     
     func addProject(id: Int16, name: String) {

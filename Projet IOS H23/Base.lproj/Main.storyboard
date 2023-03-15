@@ -36,7 +36,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="vP8-5z-PRz" kind="show" id="rKf-GU-1qE"/>
+                                    <segue destination="vP8-5z-PRz" kind="show" id="ddH-OI-fzg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-8A-SNH">
@@ -65,7 +65,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="vP8-5z-PRz" kind="show" id="QqB-XX-Gpf"/>
+                                    <segue destination="vP8-5z-PRz" kind="show" id="Snh-av-yDO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -547,7 +547,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fip-cs-Px5"/>
-        <segue reference="rKf-GU-1qE"/>
+        <segue reference="Snh-av-yDO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">

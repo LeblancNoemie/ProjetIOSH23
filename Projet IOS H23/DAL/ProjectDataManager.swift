@@ -58,7 +58,29 @@ class ProjectDataManager {
     }
     
     func getProjectById(id: Int16) -> Projet{
-        
+        let context = persistentContainer.viewContext
+        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
+        let filter = NSPredicate(format: "id == %@", id)
+        request.predicate = filter
+        do{
+            return try context.fetch(request).first!
+        }catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    func getProjectByName(name: String) -> Projet{
+        let context = persistentContainer.viewContext
+        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
+        let filter = NSPredicate(format: "nom == %@", name)
+        request.predicate = filter
+        do{
+            return try context.fetch(request).first!
+        }catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
     
     func saveProject(id:Int16, name:String){
@@ -90,7 +112,6 @@ class ProjectDataManager {
     
     func updateProject(oldPrjectId : Int16, newId: Int16, newName: String){
         let context = persistentContainer.viewContext
-
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
         let filter = NSPredicate(format: "id == %@", oldPrjectId)
         request.predicate = filter
