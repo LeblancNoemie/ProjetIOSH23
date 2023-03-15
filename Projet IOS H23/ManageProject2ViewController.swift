@@ -9,26 +9,17 @@ import UIKit
 
 class ManageProject2ViewController: UIViewController {
 
-    @IBOutlet weak var txtlabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        var dataManagerText :String = "test"
-        ProjectDataManager.shared.initProjets()
-        
-        
-        for element in ProjectDAO.shared.getAllProjects() {
-            //dataManagerText.append(element.nom!)
-            print(element.nom!)
-        }
-        
-        txtlabel.text = dataManagerText
-        // Do any additional setup after loading the view.
+        _projectNameLabel.text = projectName
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var _projectNameLabel: UILabel!
+    var projectName : String?
 
     /*
     // MARK: - Navigation
