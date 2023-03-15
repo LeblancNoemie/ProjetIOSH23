@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Compte" representedClassName=".Compte" syncable="YES" codeGenerationType="class">
         <attribute name="compte_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="montant" optional="YES" attributeType="Decimal"/>
@@ -33,10 +33,4 @@
         <relationship name="conventions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Convention" inverseName="projet" inverseEntity="Convention"/>
         <relationship name="depenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Depense" inverseName="projet" inverseEntity="Depense"/>
     </entity>
-    <elements>
-        <element name="Compte" positionX="94.8201904296875" positionY="-261.7992248535156" width="128" height="119"/>
-        <element name="Convention" positionX="-170.6383666992188" positionY="-258.2879028320312" width="128" height="148"/>
-        <element name="Depense" positionX="339.07080078125" positionY="-257.3238220214844" width="128" height="148"/>
-        <element name="Projet" positionX="113.0086669921875" positionY="-4.921142578125" width="128" height="118"/>
-    </elements>
 </model>

@@ -13,9 +13,21 @@ class ManageProject2ViewController: UIViewController {
         super.viewDidLoad()
 
         _projectNameLabel.text = projectName
+        
+        var currentProject : Projet = ProjectDAO.shared.getProjectByName(name: projectName!)
+        
+        var depTotal: NSDecimalNumber = 0
+        
+        for element in currentProject.depenses! as NSSet{
+            let e = element as! Depense
+            depTotal.adding(e.prix!)
+        }
+        print(depTotal)
+        
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var _totalDepenseLabel: UILabel!
     @IBOutlet weak var _projectNameLabel: UILabel!
     var projectName : String?
 
