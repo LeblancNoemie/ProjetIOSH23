@@ -9,9 +9,23 @@ import UIKit
 
 class ManageProject2ViewController: UIViewController {
 
+    @IBOutlet weak var txtlabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        var dataManagerText :String = "test"
+        ProjectDataManager.shared.initProjets()
+        
+        
+        for element in ProjectDAO.shared.getAllProjects() {
+            //dataManagerText.append(element.nom!)
+            print(element.nom!)
+        }
+        
+        txtlabel.text = dataManagerText
+        // Do any additional setup after loading the view.
         // Do any additional setup after loading the view.
     }
     

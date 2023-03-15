@@ -14,7 +14,7 @@ class ProjectDataManager {
     
     lazy var persistentContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "Projet IOS H23")
+        let container = NSPersistentContainer(name: "Projet_IOS_H23")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

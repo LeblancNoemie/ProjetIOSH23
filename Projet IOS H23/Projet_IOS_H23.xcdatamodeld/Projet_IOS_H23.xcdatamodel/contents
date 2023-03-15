@@ -6,7 +6,6 @@
         <attribute name="nom_banque" optional="YES" attributeType="String"/>
         <relationship name="conventions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Convention" inverseName="compte" inverseEntity="Convention"/>
         <relationship name="depenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Depense" inverseName="compte" inverseEntity="Depense"/>
-        <relationship name="projet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Projet" inverseName="compte" inverseEntity="Projet"/>
     </entity>
     <entity name="Convention" representedClassName=".Convention" syncable="YES" codeGenerationType="class">
         <attribute name="convention_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -29,14 +28,13 @@
     <entity name="Projet" representedClassName=".Projet" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nom" optional="YES" attributeType="String"/>
-        <relationship name="compte" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Compte" inverseName="projet" inverseEntity="Compte"/>
         <relationship name="conventions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Convention" inverseName="projet" inverseEntity="Convention"/>
         <relationship name="depenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Depense" inverseName="projet" inverseEntity="Depense"/>
     </entity>
     <elements>
-        <element name="Compte" positionX="94.8201904296875" positionY="-261.7992248535156" width="128" height="119"/>
+        <element name="Compte" positionX="94.8201904296875" positionY="-261.7992248535156" width="128" height="104"/>
         <element name="Convention" positionX="-170.6383666992188" positionY="-258.2879028320312" width="128" height="148"/>
         <element name="Depense" positionX="339.07080078125" positionY="-257.3238220214844" width="128" height="148"/>
-        <element name="Projet" positionX="113.0086669921875" positionY="-4.921142578125" width="128" height="118"/>
+        <element name="Projet" positionX="113.0086669921875" positionY="-4.921142578125" width="128" height="89"/>
     </elements>
 </model>

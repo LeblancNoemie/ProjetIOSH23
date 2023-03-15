@@ -196,8 +196,14 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FSu-29-kXU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="txtlabel" destination="xw9-R4-YI7" id="xfb-f3-gbb"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="vZi-oO-Pjs"/>
+                    <connections>
+                        <outlet property="txtlabel" destination="xw9-R4-YI7" id="5oB-s8-HmN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qz-gf-9fD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
