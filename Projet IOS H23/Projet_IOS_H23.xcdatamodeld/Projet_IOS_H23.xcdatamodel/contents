@@ -9,6 +9,7 @@
         <relationship name="projet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Projet" inverseName="compte" inverseEntity="Projet"/>
     </entity>
     <entity name="Convention" representedClassName=".Convention" syncable="YES" codeGenerationType="class">
+        <attribute name="convention_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date_fin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="fournisseur" optional="YES" attributeType="String"/>
         <attribute name="prix" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
@@ -18,6 +19,7 @@
     </entity>
     <entity name="Depense" representedClassName=".Depense" syncable="YES" codeGenerationType="class">
         <attribute name="date_paiement" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="depense_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="mode_paiement" optional="YES" attributeType="String"/>
         <attribute name="prix" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="type_depense" optional="YES" attributeType="String"/>
@@ -33,8 +35,8 @@
     </entity>
     <elements>
         <element name="Compte" positionX="94.8201904296875" positionY="-261.7992248535156" width="128" height="119"/>
-        <element name="Convention" positionX="-170.6383666992188" positionY="-258.2879028320312" width="128" height="119"/>
-        <element name="Depense" positionX="339.07080078125" positionY="-257.3238220214844" width="128" height="119"/>
+        <element name="Convention" positionX="-170.6383666992188" positionY="-258.2879028320312" width="128" height="148"/>
+        <element name="Depense" positionX="339.07080078125" positionY="-257.3238220214844" width="128" height="148"/>
         <element name="Projet" positionX="113.0086669921875" positionY="-4.921142578125" width="128" height="118"/>
     </elements>
 </model>

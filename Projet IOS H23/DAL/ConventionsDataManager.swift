@@ -1,16 +1,14 @@
 //
-//  ComptesDataManager.swift
+//  ConventionsDataManager.swift
 //  Projet IOS H23
 //
 //  Created by Noemie Leblanc Lessard on 2023-03-14.
 //
 
 import Foundation
-import CoreData
-
-class DepensesDataManager{
+class ConventionsDataManager{
     
-    static let shared = DepensesDataManager()
+    static let shared = ConventionsDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
         

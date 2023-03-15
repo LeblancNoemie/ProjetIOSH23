@@ -57,6 +57,10 @@ class ProjectDataManager {
         }
     }
     
+    func getProjectById(id: Int16) -> Projet{
+        
+    }
+    
     func saveProject(id:Int16, name:String){
         let context = persistentContainer.viewContext
         let newProject = NSEntityDescription.insertNewObject(forEntityName: "Projet", into: context)
@@ -84,24 +88,20 @@ class ProjectDataManager {
         }
     }
     
-    //TODO À retravailler...
-//    func updateProject(oldPrjectId : Int16, newProject: Projet){
-//        let context = persistentContainer.viewContext
-//
-//        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
-//        let filter = NSPredicate(format: "id == %@", oldPrjectId)
-//        request.predicate = filter
-//        do{
-//            let prj = try context.fetch(request).first!
-//            if prj != nil {
-//                prj.setValue(newProject.id, forKey: "id")
-//                prj.setValue(newProject.nom, forKey: "nom")
-//            }
-//        }catch{
-//
-//        }
-//    }
-    
-    
-    
+    func updateProject(oldPrjectId : Int16, newId: Int16, newName: String){
+        let context = persistentContainer.viewContext
+
+        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
+        let filter = NSPredicate(format: "id == %@", oldPrjectId)
+        request.predicate = filter
+        do{
+            let prj = try context.fetch(request).first!
+            prj.setValue(newId, forKey: "id")
+            prj.setValue(newName, forKey: "nom")
+            try context.save()
+            
+        }catch{
+            print("Error: \(error)")
+        }
+    }
 }
