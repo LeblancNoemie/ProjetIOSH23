@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-class DataManager {
+class ProjectDataManager {
     //définir un singleton
-    static let shared = DataManager()
+    static let shared = ProjectDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
         
@@ -22,6 +22,10 @@ class DataManager {
         })
         return container
     }()
+    
+    //
+    //  Projet entity
+    //
     
     func initProjets() {
         let context = persistentContainer.viewContext
@@ -53,11 +57,11 @@ class DataManager {
         }
     }
     
-    func saveProject(project: Projet){
+    func saveProject(id:Int16, name:String){
         let context = persistentContainer.viewContext
         let newProject = NSEntityDescription.insertNewObject(forEntityName: "Projet", into: context)
-        newProject.setValue(project.id, forKey: "id")
-        newProject.setValue(project.nom, forKey: "nom")
+        newProject.setValue(id, forKey: "id")
+        newProject.setValue(name, forKey: "nom")
         do{
             try context.save()
         }catch{
@@ -67,11 +71,9 @@ class DataManager {
     
     func deleteProject(id: Int16){
         let context = persistentContainer.viewContext
-        
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
         let filter = NSPredicate(format: "id == %@", id)
         request.predicate = filter
-        
         do{
             let prj = try context.fetch(request).first
             if prj != nil {
@@ -82,23 +84,24 @@ class DataManager {
         }
     }
     
-    func updateProject(oldPrjectId : Int16, newProject: Projet){
-        let context = persistentContainer.viewContext
-        
-        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
-        let filter = NSPredicate(format: "id == %@", oldPrjectId)
-        request.predicate = filter
-        
-        do{
-            let prj = try context.fetch(request).first!
-            
-            if prj != nil {
-                prj.setValue(newProject.id, forKey: "id")
-                prj.setValue(newProject.nom, forKey: "nom")
-            }
-        }catch{
-            
-        }
-    }
+    //TODO À retravailler...
+//    func updateProject(oldPrjectId : Int16, newProject: Projet){
+//        let context = persistentContainer.viewContext
+//
+//        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
+//        let filter = NSPredicate(format: "id == %@", oldPrjectId)
+//        request.predicate = filter
+//        do{
+//            let prj = try context.fetch(request).first!
+//            if prj != nil {
+//                prj.setValue(newProject.id, forKey: "id")
+//                prj.setValue(newProject.nom, forKey: "nom")
+//            }
+//        }catch{
+//
+//        }
+//    }
+    
+    
     
 }

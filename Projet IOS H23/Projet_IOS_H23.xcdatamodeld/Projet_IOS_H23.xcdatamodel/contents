@@ -24,7 +24,7 @@
         <relationship name="compte" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Compte" inverseName="depenses" inverseEntity="Compte"/>
         <relationship name="projet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Projet" inverseName="depenses" inverseEntity="Projet"/>
     </entity>
-    <entity name="Projet" representedClassName=".Projet" syncable="YES">
+    <entity name="Projet" representedClassName=".Projet" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nom" optional="YES" attributeType="String"/>
         <relationship name="compte" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Compte" inverseName="projet" inverseEntity="Compte"/>

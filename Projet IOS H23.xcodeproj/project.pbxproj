@@ -14,7 +14,10 @@
 		2608901229BBBACD00382F4D /* Compte2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901129BBBACD00382F4D /* Compte2ViewController.swift */; };
 		2608901429BBBAE400382F4D /* CreateProject2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */; };
 		2608901629BBBAF900382F4D /* ManageProject2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */; };
-		2608901C29BBC03900382F4D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901B29BBC03900382F4D /* DataManager.swift */; };
+		2608901C29BBC03900382F4D /* ProjectDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608901B29BBC03900382F4D /* ProjectDataManager.swift */; };
+		263B0F2829C14D0A008C79DB /* ProjectDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2729C14D0A008C79DB /* ProjectDAO.swift */; };
+		263B0F2C29C158EF008C79DB /* ComptesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2B29C158EF008C79DB /* ComptesDataManager.swift */; };
+		263B0F2E29C15984008C79DB /* DepensesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2D29C15984008C79DB /* DepensesDataManager.swift */; };
 		26E1B6AC29B8CA7A0026FBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */; };
 		26E1B6AE29B8CA7A0026FBEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */; };
 		26E1B6B029B8CA7A0026FBEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AF29B8CA7A0026FBEC /* ViewController.swift */; };
@@ -32,7 +35,10 @@
 		2608901129BBBACD00382F4D /* Compte2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compte2ViewController.swift; sourceTree = "<group>"; };
 		2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProject2ViewController.swift; sourceTree = "<group>"; };
 		2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProject2ViewController.swift; sourceTree = "<group>"; };
-		2608901B29BBC03900382F4D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2608901B29BBC03900382F4D /* ProjectDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDataManager.swift; sourceTree = "<group>"; };
+		263B0F2729C14D0A008C79DB /* ProjectDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDAO.swift; sourceTree = "<group>"; };
+		263B0F2B29C158EF008C79DB /* ComptesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComptesDataManager.swift; sourceTree = "<group>"; };
+		263B0F2D29C15984008C79DB /* DepensesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesDataManager.swift; sourceTree = "<group>"; };
 		26E1B6A829B8CA7A0026FBEC /* Projet IOS H23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOS H23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +64,10 @@
 		263B0F2629C131A4008C79DB /* DAL */ = {
 			isa = PBXGroup;
 			children = (
-				2608901B29BBC03900382F4D /* DataManager.swift */,
+				263B0F2729C14D0A008C79DB /* ProjectDAO.swift */,
+				2608901B29BBC03900382F4D /* ProjectDataManager.swift */,
+				263B0F2B29C158EF008C79DB /* ComptesDataManager.swift */,
+				263B0F2D29C15984008C79DB /* DepensesDataManager.swift */,
 			);
 			path = DAL;
 			sourceTree = "<group>";
@@ -174,7 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2608901029BBBAB100382F4D /* CompteDetails2ViewController.swift in Sources */,
-				2608901C29BBC03900382F4D /* DataManager.swift in Sources */,
+				2608901C29BBC03900382F4D /* ProjectDataManager.swift in Sources */,
+				263B0F2829C14D0A008C79DB /* ProjectDAO.swift in Sources */,
+				263B0F2C29C158EF008C79DB /* ComptesDataManager.swift in Sources */,
 				26E1B6B029B8CA7A0026FBEC /* ViewController.swift in Sources */,
 				2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */,
 				2608901229BBBACD00382F4D /* Compte2ViewController.swift in Sources */,
@@ -183,6 +194,7 @@
 				26E1B6B629B8CA7A0026FBEC /* Projet_IOS_H23.xcdatamodeld in Sources */,
 				26E1B6AC29B8CA7A0026FBEC /* AppDelegate.swift in Sources */,
 				2608901429BBBAE400382F4D /* CreateProject2ViewController.swift in Sources */,
+				263B0F2E29C15984008C79DB /* DepensesDataManager.swift in Sources */,
 				2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */,
 				26E1B6AE29B8CA7A0026FBEC /* SceneDelegate.swift in Sources */,
 			);
