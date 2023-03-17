@@ -16,7 +16,8 @@ class ManageProject2ViewController: UIViewController {
 
         _projectNameLabel.text = projectName
         
-        var currentProject : Projet = ProjectDAO.shared.getProjectByName(name: projectName!)
+        
+        var currentProject : Projet = ProjectDAO.shared.getProjectByName(name: "Les Jardins Mercier"/*projectName!*/)
         
         var depTotal: NSDecimalNumber = 0
         
