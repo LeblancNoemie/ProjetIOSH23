@@ -73,6 +73,10 @@ class ProjectDataManager {
     func getProjectByName(name: String) -> Projet{
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
+        print("Searching for: \(name)")
+        for element in getAllProjects(){
+            print("\(element.nom)")
+        }
         let filter = NSPredicate(format: "nom == %@", name)
         request.predicate = filter
         do{
@@ -81,6 +85,10 @@ class ProjectDataManager {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+    }
+    
+    func getDepensesFromProject(name: String) -> [Depense]{
+        return Array(getProjectByName(name: name).depenses as! Set<Depense>)
     }
     
     func saveProject(id:Int16, name:String){

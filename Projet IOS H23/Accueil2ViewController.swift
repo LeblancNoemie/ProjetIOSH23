@@ -15,7 +15,8 @@ class Accueil2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //ProjectDataManager.shared.initProjets()
+        //DepensesDataManager.shared.initDepenses()
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {

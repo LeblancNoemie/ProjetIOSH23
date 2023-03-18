@@ -15,12 +15,15 @@ class ManageProject2ViewController: UIViewController {
         super.viewDidLoad()
 
         _projectNameLabel.text = projectName
+        totalDepensesLabel.text = "\(ProjectDAO.shared.getTotalSpending(projectName: projectName! )) $"
+        
         // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var _projectNameLabel: UILabel!
     var projectName : String?
 
+    @IBOutlet weak var totalDepensesLabel: UILabel!
     /*
     // MARK: - Navigation
 

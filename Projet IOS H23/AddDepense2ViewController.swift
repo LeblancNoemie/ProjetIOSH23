@@ -7,13 +7,15 @@
 
 import UIKit
 
-class AddDepense2ViewController: UIViewController {
+class AddDepense2ViewController: UIViewController{
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*
