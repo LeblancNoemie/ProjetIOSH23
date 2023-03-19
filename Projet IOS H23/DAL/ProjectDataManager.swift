@@ -66,8 +66,9 @@ class ProjectDataManager {
             return try context.fetch(request).first!
         }catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            print("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        return Projet()
     }
     
     func getProjectByName(name: String) -> Projet{
@@ -76,11 +77,13 @@ class ProjectDataManager {
         let filter = NSPredicate(format: "nom == %@", name)
         request.predicate = filter
         do{
-            return try context.fetch(request).first!
+            return try context.fetch(request).first ?? Projet()
         }catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            print("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        
+        return Projet()
     }
     
     func saveProject(id:Int16, name:String){

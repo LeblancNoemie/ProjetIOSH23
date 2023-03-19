@@ -17,15 +17,19 @@ class ManageProject2ViewController: UIViewController {
         _projectNameLabel.text = projectName
         
         
-        var currentProject : Projet = ProjectDAO.shared.getProjectByName(name: "Les Jardins Mercier"/*projectName!*/)
+        var currentProject : Projet = ProjectDAO.shared.getProjectByName(name: projectName!)
         
         var depTotal: NSDecimalNumber = 0
         
-        for element in currentProject.depenses! as NSSet{
-            let e = element as! Depense
-            depTotal.adding(e.prix!)
-        }
-        print(depTotal)
+        
+        do{
+            for element in currentProject.depenses! as NSSet{
+                let e = element as! Depense
+                depTotal.adding(e.prix!)
+            }
+        } catch { }
+        
+        _totalDepenseLabel.text = "\(depTotal)$"
         
         // Do any additional setup after loading the view.
     }
