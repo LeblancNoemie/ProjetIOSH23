@@ -27,7 +27,7 @@
     </entity>
     <entity name="Projet" representedClassName=".Projet" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="nom" optional="YES" attributeType="String"/>
+        <attribute name="nom" attributeType="String"/>
         <relationship name="conventions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Convention" inverseName="projet" inverseEntity="Convention"/>
         <relationship name="depenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Depense" inverseName="projet" inverseEntity="Depense"/>
     </entity>

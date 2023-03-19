@@ -27,25 +27,42 @@ class ProjectDataManager {
     //  Projet entity
     //
     
-    func initProjets() {
-        let context = persistentContainer.viewContext
-        //Ajout de projets sur l'application
-        let p1 = Projet(context: context)
-        p1.nom = "YUL Condominium"
-        p1.id = 100
-         
-        let p2 = Projet(context:context)
-        p2.nom = "Les Jardins Mercier"
-        p2.id = 101
-                 
-         do{
-             try context.save()
-         }catch{
-             let nserror = error as NSError
-             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-         }
+    //Deprecated -> See DataManager.initAppData()
+    func initProjets() {        
+//        let context = persistentContainer.viewContext
+//        //Ajout de projets sur l'application
+//        let p1 = Projet(context: context)
+//        p1.nom = "YUL Condominium"
+//        p1.id = 100
+//        let p2 = Projet(context:context)
+//        p2.nom = "Les Jardins Mercier"
+//        p2.id = 101
+//         do{
+//             try context.save()
+//         }catch{
+//             let nserror = error as NSError
+//             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//         }
      }
     
+    /*
+     * 'Create' function
+     */
+    func saveProject(id:Int16, name:String){
+        let context = persistentContainer.viewContext
+        let newProject = NSEntityDescription.insertNewObject(forEntityName: "Projet", into: context)
+        newProject.setValue(id, forKey: "id")
+        newProject.setValue(name, forKey: "nom")
+        do{
+            try context.save()
+        }catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    /*
+     * 'Read' functions
+     */
     func getAllProjects() -> [Projet] {
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
         let context = persistentContainer.viewContext
@@ -86,18 +103,34 @@ class ProjectDataManager {
         return Projet()
     }
     
-    func saveProject(id:Int16, name:String){
+    func getDepensesFromProject(name: String) -> [Depense]{
+//        let res : [Depense] = Array(getProjectByName(name: name).depenses as! Set<Depense>)
+        let projet = getProjectByName(name: name)
+        return projet.depenses?.allObjects as! [Depense]
+    }
+    
+    /*
+     * 'Update' function
+     */
+    func updateProject(oldPrjectId : Int16, newId: Int16, newName: String){
         let context = persistentContainer.viewContext
-        let newProject = NSEntityDescription.insertNewObject(forEntityName: "Projet", into: context)
-        newProject.setValue(id, forKey: "id")
-        newProject.setValue(name, forKey: "nom")
+        let request : NSFetchRequest<Projet> = Projet.fetchRequest()
+        let filter = NSPredicate(format: "id == %@", oldPrjectId)
+        request.predicate = filter
         do{
+            let prj = try context.fetch(request).first!
+            prj.setValue(newId, forKey: "id")
+            prj.setValue(newName, forKey: "nom")
             try context.save()
+            
         }catch{
             print("Error: \(error)")
         }
     }
     
+    /*
+     * 'Delete' functions
+     */
     func deleteProject(id: Int16){
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
@@ -113,19 +146,19 @@ class ProjectDataManager {
         }
     }
     
-    func updateProject(oldPrjectId : Int16, newId: Int16, newName: String){
+    func deleteAll(){
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
-        let filter = NSPredicate(format: "id == %@", oldPrjectId)
-        request.predicate = filter
-        do{
-            let prj = try context.fetch(request).first!
-            prj.setValue(newId, forKey: "id")
-            prj.setValue(newName, forKey: "nom")
-            try context.save()
-            
-        }catch{
-            print("Error: \(error)")
+        do {
+            let projects = try context.fetch(request)
+            if projects.count > 0 {
+                for project in projects as [Projet]{
+                    context.delete(project)
+                    context
+                }
+            }
+        } catch {
+            print("Error \(error)")
         }
     }
 }

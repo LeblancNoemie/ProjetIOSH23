@@ -21,8 +21,6 @@ class Accueil2ViewController: UIViewController {
     @IBAction func onClickButton(_ sender: UIButton) {
         name = sender.titleLabel!.text!
         performSegue(withIdentifier: "projetButtonToProjectManage", sender: self)
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,6 +28,5 @@ class Accueil2ViewController: UIViewController {
             let vc = segue.destination as! ManageProject2ViewController
             vc.projectName = name
         }
-    }
-     
+    }     
 }

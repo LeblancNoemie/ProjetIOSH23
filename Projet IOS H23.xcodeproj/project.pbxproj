@@ -20,6 +20,9 @@
 		263B0F2E29C15984008C79DB /* DepensesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2D29C15984008C79DB /* DepensesDataManager.swift */; };
 		263B0F3029C15A9C008C79DB /* ConventionsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */; };
 		263B0F3329C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F3129C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodeld */; };
+		26B25D2C29C69BD8001C82AC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D2B29C69BD8001C82AC /* DataManager.swift */; };
+		26B25D2F29C6B3C2001C82AC /* DepensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */; };
+		26B25D3129C6BB5A001C82AC /* DepenseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */; };
 		26E1B6AC29B8CA7A0026FBEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */; };
 		26E1B6AE29B8CA7A0026FBEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */; };
 		26E1B6B029B8CA7A0026FBEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E1B6AF29B8CA7A0026FBEC /* ViewController.swift */; };
@@ -42,6 +45,9 @@
 		263B0F2D29C15984008C79DB /* DepensesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesDataManager.swift; sourceTree = "<group>"; };
 		263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConventionsDataManager.swift; sourceTree = "<group>"; };
 		263B0F3229C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Projet_IOS_H23.xcdatamodel; sourceTree = "<group>"; };
+		26B25D2B29C69BD8001C82AC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = SOURCE_ROOT; };
+		26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesTableViewController.swift; sourceTree = "<group>"; };
+		26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseDAO.swift; sourceTree = "<group>"; };
 		26E1B6A829B8CA7A0026FBEC /* Projet IOS H23.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOS H23.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E1B6AB29B8CA7A0026FBEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26E1B6AD29B8CA7A0026FBEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,13 +72,23 @@
 		263B0F2629C131A4008C79DB /* DAL */ = {
 			isa = PBXGroup;
 			children = (
-				263B0F2729C14D0A008C79DB /* ProjectDAO.swift */,
+				26B25D2D29C69BE9001C82AC /* DAO */,
+				26B25D2B29C69BD8001C82AC /* DataManager.swift */,
 				2608901B29BBC03900382F4D /* ProjectDataManager.swift */,
 				263B0F2B29C158EF008C79DB /* ComptesDataManager.swift */,
 				263B0F2D29C15984008C79DB /* DepensesDataManager.swift */,
 				263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */,
 			);
 			path = DAL;
+			sourceTree = "<group>";
+		};
+		26B25D2D29C69BE9001C82AC /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				263B0F2729C14D0A008C79DB /* ProjectDAO.swift */,
+				26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		26E1B69F29B8CA7A0026FBEC = {
@@ -110,6 +126,7 @@
 				2608901129BBBACD00382F4D /* Compte2ViewController.swift */,
 				2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */,
 				2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */,
+				26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */,
 			);
 			path = "Projet IOS H23";
 			sourceTree = "<group>";
@@ -187,6 +204,7 @@
 			files = (
 				2608901029BBBAB100382F4D /* CompteDetails2ViewController.swift in Sources */,
 				2608901C29BBC03900382F4D /* ProjectDataManager.swift in Sources */,
+				26B25D2F29C6B3C2001C82AC /* DepensesTableViewController.swift in Sources */,
 				263B0F3029C15A9C008C79DB /* ConventionsDataManager.swift in Sources */,
 				263B0F2829C14D0A008C79DB /* ProjectDAO.swift in Sources */,
 				263B0F2C29C158EF008C79DB /* ComptesDataManager.swift in Sources */,
@@ -194,6 +212,8 @@
 				2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */,
 				2608901229BBBACD00382F4D /* Compte2ViewController.swift in Sources */,
 				2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */,
+				26B25D3129C6BB5A001C82AC /* DepenseDAO.swift in Sources */,
+				26B25D2C29C69BD8001C82AC /* DataManager.swift in Sources */,
 				2608901629BBBAF900382F4D /* ManageProject2ViewController.swift in Sources */,
 				26E1B6AC29B8CA7A0026FBEC /* AppDelegate.swift in Sources */,
 				2608901429BBBAE400382F4D /* CreateProject2ViewController.swift in Sources */,
