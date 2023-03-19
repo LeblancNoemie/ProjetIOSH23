@@ -26,6 +26,14 @@ class AddDepense2ViewController: UIViewController{
         setCompteBtn()
     }
     
+    
+    @IBOutlet weak var _TypeDeDepense: UITextField!
+    @IBOutlet weak var _Prix: UITextField!
+    @IBOutlet weak var _Date: UIDatePicker!
+    @IBOutlet weak var _Projet: UITextField!
+    @IBOutlet weak var _MethodeDePaiment: UITextField!
+    @IBOutlet weak var _CompteADebiter: UITextField!
+    
     func setModePaiementBtn(){
         let actionClosure = {(action : UIAction) in
             if action.title == "Chèque"{
