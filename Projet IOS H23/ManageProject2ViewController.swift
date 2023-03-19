@@ -15,21 +15,13 @@ class ManageProject2ViewController: UIViewController {
         super.viewDidLoad()
         
         _projectNameLabel.text = projectName
-        totalDepensesLabel.text = "\(ProjectDAO.shared.getTotalSpending(projectName: projectName! )) $"
+//        totalDepensesLabel.text = "\(ProjectDAO.shared.getTotalSpending(projectName: projectName! )) $"
     }
     
     @IBOutlet weak var _projectNameLabel: UILabel!
     var projectName : String?
 
     @IBOutlet weak var totalDepensesLabel: UILabel!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

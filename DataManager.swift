@@ -14,7 +14,7 @@ class DataManager{
     //Can also delete all the data (for testing purposes)
     
     //définir un singleton
-    static let shared = ProjectDataManager()
+    static let shared = DataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
         

@@ -19,7 +19,8 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2T-cB-Pcr">
                                 <rect key="frame" x="0.0" y="-51" width="414" height="987"/>
-                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <color key="backgroundColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="fAE-RU-cMe">
                                 <rect key="frame" x="-338" y="221" width="836" height="685"/>
@@ -80,8 +81,7 @@
                                     <color key="baseBackgroundColor" red="0.1137390509" green="0.37579953669999999" blue="0.67158251999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onClickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="14q-Fb-N5x"/>
-                                    <segue destination="5AP-kB-9gF" kind="show" id="DEb-Ql-xnK"/>
+                                    <segue destination="5AP-kB-9gF" kind="show" id="yrL-dn-UgE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkO-FO-oKm">
@@ -100,29 +100,11 @@
                                     <segue destination="vP8-5z-PRz" kind="show" id="ddH-OI-fzg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-rQ-nN5">
-                                <rect key="frame" x="33" y="804" width="348" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="NZO-74-pnY"/>
-                                    <constraint firstAttribute="height" constant="58" id="zl9-tJ-ov3"/>
-                                </constraints>
-                                <color key="tintColor" red="0.0" green="0.50976407099999999" blue="0.85685552730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Delete all data" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
-                                    <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="deleteAllData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1Y-Fa-KW9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KQf-rQ-nN5" firstAttribute="trailing" secondItem="ENv-KH-BOW" secondAttribute="trailing" id="5iG-Md-nK3"/>
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="leading" secondItem="gWB-Nf-fUg" secondAttribute="leading" id="96W-du-mQ7"/>
-                            <constraint firstItem="KQf-rQ-nN5" firstAttribute="leading" secondItem="ENv-KH-BOW" secondAttribute="leading" id="AeI-cJ-qMh"/>
                             <constraint firstItem="O2T-cB-Pcr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bdb-4t-pQt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Au-8A-SNH" secondAttribute="bottom" constant="392" id="H3P-PL-mQs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rmo-eY-ewr" secondAttribute="trailing" constant="132" id="HkD-SK-HKm"/>
@@ -143,7 +125,6 @@
                             <constraint firstAttribute="bottomMargin" secondItem="O2T-cB-Pcr" secondAttribute="bottom" constant="-74" id="mbj-hw-gsB"/>
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="trailing" secondItem="tkO-FO-oKm" secondAttribute="trailing" id="pAe-Tb-UFG"/>
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="centerX" secondItem="O2T-cB-Pcr" secondAttribute="centerX" id="vQ0-kJ-UH3"/>
-                            <constraint firstItem="KQf-rQ-nN5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zpf-0e-IZg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -258,6 +239,9 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Voir les échéanciers">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Xnh-NM-N7f" kind="show" id="uZX-kq-TB1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FSu-29-kXU"/>
@@ -271,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qz-gf-9fD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705.7971014492755" y="109.82142857142857"/>
+            <point key="canvasLocation" x="964" y="856"/>
         </scene>
         <!--Add Depense2 View Controller-->
         <scene sceneID="G4K-xa-cyD">
@@ -380,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DgM-1K-vgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2753.6231884057975" y="109.82142857142857"/>
+            <point key="canvasLocation" x="1671" y="856"/>
         </scene>
         <!--Compte2 View Controller-->
         <scene sceneID="KEb-e0-W8d">
@@ -397,9 +381,6 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Banque Nationale">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="tE2-fG-djJ" kind="show" id="fip-cs-Px5"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-vS-iG1">
                                 <rect key="frame" x="34" y="300" width="346" height="72"/>
@@ -408,9 +389,6 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Banque Royale du Canada">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="tE2-fG-djJ" kind="show" id="Dxz-07-qe1"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Échéancier(s):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1l-Ci-8nt">
                                 <rect key="frame" x="35" y="418" width="167" height="33"/>
@@ -450,54 +428,63 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vm3-nx-Z1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963.76811594202911" y="900.66964285714278"/>
+            <point key="canvasLocation" x="-26" y="856"/>
         </scene>
-        <!--Compte Details2 View Controller-->
-        <scene sceneID="n7J-xY-QEa">
+        <!--Depenses Table View Controller-->
+        <scene sceneID="kFv-2A-GFA">
             <objects>
-                <viewController id="tE2-fG-djJ" customClass="CompteDetails2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZgR-T9-F32">
+                <tableViewController id="Xnh-NM-N7f" customClass="DepensesTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="qHp-Ch-JVB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-97-JG7">
-                                <rect key="frame" x="35" y="243" width="312" height="445"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Phasellus volutpat diam a velit accumsan aliquam.
-Etiam eget tortor id turpis pretium faucibus in nec velit.
-Proin bibendum arcu in est tempus, at dapibus metus porttitor.
-Quisque scelerisque lectus rutrum purus gravida suscipit.
-Ut sodales arcu sit amet lorem sagittis venenatis.
-Sed eu ex consequat, ullamcorper dui sit amet, congue risus.
-Nullam nec nisl ut mauris cursus hendrerit.
-Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" systemColor="systemGrayColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dépense(s):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSB-rP-jxW">
-                                <rect key="frame" x="35" y="218" width="142" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" name="AccentColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Banque Nationale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtJ-jd-Qs4">
-                                <rect key="frame" x="35" y="143" width="274" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="iKp-Lg-jlp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="2ZI-yG-78Y"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="73f-L1-v9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepenseCellIdentifier" rowHeight="57" id="VgC-BI-LfX" customClass="DepenseTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="57"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VgC-BI-LfX" id="zRu-WQ-BQQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuiles céramique turque" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-6u-lBO">
+                                            <rect key="frame" x="35" y="0.0" width="242" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2023-04-05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2N-30-UEI">
+                                            <rect key="frame" x="35" y="18" width="195" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1700 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUU-cE-bI6">
+                                            <rect key="frame" x="314" y="0.0" width="52" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="depense_date" destination="F2N-30-UEI" id="dfr-YP-Ygd"/>
+                                    <outlet property="depense_prix" destination="ZUU-cE-bI6" id="Asd-F1-h4i"/>
+                                    <outlet property="depense_type" destination="Qsi-6u-lBO" id="REy-7U-V2z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Xnh-NM-N7f" id="Ydg-lE-c8G"/>
+                            <outlet property="delegate" destination="Xnh-NM-N7f" id="vi1-6r-rak"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="H4m-an-8pG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2c-wg-6t2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="901"/>
+            <point key="canvasLocation" x="963.76811594202911" y="1524.7767857142856"/>
         </scene>
         <!--Add Convention2 View Controller-->
         <scene sceneID="S7r-pt-zs5">
@@ -606,11 +593,10 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ha-ze-2sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3495.652173913044" y="109.82142857142857"/>
+            <point key="canvasLocation" x="2387" y="856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fip-cs-Px5"/>
         <segue reference="Snh-av-yDO"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -621,17 +607,11 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

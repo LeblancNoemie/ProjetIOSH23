@@ -90,10 +90,6 @@ class ProjectDataManager {
     func getProjectByName(name: String) -> Projet{
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Projet> = Projet.fetchRequest()
-//        print("Searching for: \(name)")
-//        for element in getAllProjects(){
-//            print("\(element.nom)")
-//        }
         let filter = NSPredicate(format: "nom == %@", name)
         request.predicate = filter
         do{
@@ -106,7 +102,6 @@ class ProjectDataManager {
     
     func getDepensesFromProject(name: String) -> [Depense]{
         let res : [Depense] = Array(getProjectByName(name: name).depenses as! Set<Depense>)
-        print(res.count)
         return res
     }
     

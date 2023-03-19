@@ -42,6 +42,7 @@ class ProjectDAO : IProjectDAO{
     }
     
     func getTotalSpending(projectName: String) -> Double {
+        //Pas fonctionnel?
         var total : Double = 50.00
         for element in ProjectDataManager.shared.getDepensesFromProject(name: projectName){
             total = total + Double(element.prix!)

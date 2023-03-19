@@ -15,15 +15,10 @@ class Accueil2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ProjectDataManager.shared.initProjets()
-        //DepensesDataManager.shared.initDepenses()
-    }
-    @IBAction func deleteAllData(_ sender: Any) {
-        ProjectDataManager.shared.deleteAll()
-        DepensesDataManager.shared.deleteAll()
+        for x in DepenseDAO.shared.getProjectUpcomingPayments(project_name: "YUL Condominium"){
+            print(x.description)
+        }
         
-        print("\(ProjectDataManager.shared.getAllProjects().count) ")
-        print("\(DepensesDataManager.shared.getAllDepenses().count) ")
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {

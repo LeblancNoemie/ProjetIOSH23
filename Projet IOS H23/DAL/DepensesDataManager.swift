@@ -113,6 +113,19 @@ class DepensesDataManager{
         }
     }
     
+    func getDepenseByPayment(payment_mode: String) -> [Depense]{
+        let context = persistentContainer.viewContext
+        let request : NSFetchRequest<Depense> = Depense.fetchRequest()
+        let filter = NSPredicate(format: "mode_paiement == %@", payment_mode)
+        request.predicate = filter
+        do{
+            return try context.fetch(request)
+        }catch{
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
     /*
      * 'Delete' function
      */
@@ -147,4 +160,6 @@ class DepensesDataManager{
             print("Error \(error)")
         }
     }
+
+    
 }
