@@ -65,6 +65,29 @@ class DepensesDataManager{
          }
      }
     
+    /*
+     * 'Create' function
+     */
+    func saveDepense(prj : Projet, cpt:Compte, datePaiement: Date, dps_id: Int16, mode:String, prx: Double, type:String){
+        let context = persistentContainer.viewContext
+        let newDepense = NSEntityDescription.insertNewObject(forEntityName: "Depenses", into: context)
+        newDepense.setValue(prj, forKey: "projet")
+        newDepense.setValue(cpt, forKey: "compte")
+        newDepense.setValue(datePaiement, forKey: "date_paiement")
+        newDepense.setValue(dps_id, forKey: "depense_id")
+        newDepense.setValue(mode, forKey: "mode_paiement")
+        newDepense.setValue(prx, forKey: "prix")
+        newDepense.setValue(type, forKey: "type_depense")
+        do{
+            try context.save()
+        }catch{
+            print("Error: \(error)")
+        }
+    }
+    
+    /*
+     * 'Read' function
+     */
     func getAllDepenses() -> [Depense] {
         let request : NSFetchRequest<Depense> = Depense.fetchRequest()
         let context = persistentContainer.viewContext
@@ -89,24 +112,9 @@ class DepensesDataManager{
         }
     }
     
-    
-    func saveDepense(prj : Projet, cpt:Compte, datePaiement: Date, dps_id: Int16, mode:String, prx: Double, type:String){
-        let context = persistentContainer.viewContext
-        let newDepense = NSEntityDescription.insertNewObject(forEntityName: "Depenses", into: context)
-        newDepense.setValue(prj, forKey: "projet")
-        newDepense.setValue(cpt, forKey: "compte")
-        newDepense.setValue(datePaiement, forKey: "date_paiement")
-        newDepense.setValue(dps_id, forKey: "depense_id")
-        newDepense.setValue(mode, forKey: "mode_paiement")
-        newDepense.setValue(prx, forKey: "prix")
-        newDepense.setValue(type, forKey: "type_depense")
-        do{
-            try context.save()
-        }catch{
-            print("Error: \(error)")
-        }
-    }
-    
+    /*
+     * 'Delete' function
+     */
     func deleteDepense(id: Int16){
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Depense> = Depense.fetchRequest()
@@ -121,7 +129,24 @@ class DepensesDataManager{
             print("Error: \(error)")
         }
     }
-        
+            
+    func deleteAll(){
+        let context = persistentContainer.viewContext
+        let request : NSFetchRequest<Depense> = Depense.fetchRequest()
+        do {
+            let depenses = try context.fetch(request)
+//            print("There are currently: \(depenses.count)")
+            if depenses.count > 0 {
+                for depense in depenses {
+                    context.delete(depense)
+                }
+            }
+//            print("Items now deleted. There are \(DepensesDataManager.shared.getAllDepenses().count) items now.")
+        } catch {
+            print("Error \(error)")
+        }
+    }
+    
     func generateDate(year: Int, month: Int, day:Int) -> Date {
             var dateComponents = DateComponents()
             dateComponents.year = year
@@ -129,7 +154,6 @@ class DepensesDataManager{
             dateComponents.day = day
             dateComponents.hour = Int.random(in: 1..<23)
             dateComponents.minute = Int.random(in: 1..<60)
-
             // Create date from components
             let userCalendar = Calendar(identifier: .gregorian) // since the components above (like year 1980) are for Gregorian
             return userCalendar.date(from: dateComponents)!

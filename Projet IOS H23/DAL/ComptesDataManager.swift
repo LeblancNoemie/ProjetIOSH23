@@ -40,7 +40,6 @@ class ComptesDataManager{
         c2.montant = 934000.99
         c2.nom_banque = "Banque Nationale"
         c2.compte_id = 202
-                 
          do{
              try context.save()
          }catch{
@@ -49,6 +48,9 @@ class ComptesDataManager{
          }
      }
     
+    /*
+     * 'Read' function
+     */
     func getAllComptes() -> [Compte] {
         let request : NSFetchRequest<Compte> = Compte.fetchRequest()
         let context = persistentContainer.viewContext
@@ -86,7 +88,9 @@ class ComptesDataManager{
         }
     }
     
-    
+    /*
+     * 'Update' function
+     */
     func updateCompte(oldCompteId : Int16, newId: Int16, newBank: String, newAmount: Double){
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Compte> = Compte.fetchRequest()

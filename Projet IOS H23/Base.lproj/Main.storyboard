@@ -100,11 +100,29 @@
                                     <segue destination="vP8-5z-PRz" kind="show" id="ddH-OI-fzg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQf-rQ-nN5">
+                                <rect key="frame" x="33" y="804" width="348" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="NZO-74-pnY"/>
+                                    <constraint firstAttribute="height" constant="58" id="zl9-tJ-ov3"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.50976407099999999" blue="0.85685552730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Delete all data" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                    <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteAllData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1Y-Fa-KW9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KQf-rQ-nN5" firstAttribute="trailing" secondItem="ENv-KH-BOW" secondAttribute="trailing" id="5iG-Md-nK3"/>
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="leading" secondItem="gWB-Nf-fUg" secondAttribute="leading" id="96W-du-mQ7"/>
+                            <constraint firstItem="KQf-rQ-nN5" firstAttribute="leading" secondItem="ENv-KH-BOW" secondAttribute="leading" id="AeI-cJ-qMh"/>
                             <constraint firstItem="O2T-cB-Pcr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bdb-4t-pQt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Au-8A-SNH" secondAttribute="bottom" constant="392" id="H3P-PL-mQs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rmo-eY-ewr" secondAttribute="trailing" constant="132" id="HkD-SK-HKm"/>
@@ -125,6 +143,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="O2T-cB-Pcr" secondAttribute="bottom" constant="-74" id="mbj-hw-gsB"/>
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="trailing" secondItem="tkO-FO-oKm" secondAttribute="trailing" id="pAe-Tb-UFG"/>
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="centerX" secondItem="O2T-cB-Pcr" secondAttribute="centerX" id="vQ0-kJ-UH3"/>
+                            <constraint firstItem="KQf-rQ-nN5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zpf-0e-IZg"/>
                         </constraints>
                     </view>
                     <connections>
@@ -601,6 +620,9 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -18,12 +18,17 @@ class Accueil2ViewController: UIViewController {
         //ProjectDataManager.shared.initProjets()
         //DepensesDataManager.shared.initDepenses()
     }
+    @IBAction func deleteAllData(_ sender: Any) {
+        ProjectDataManager.shared.deleteAll()
+        DepensesDataManager.shared.deleteAll()
+        
+        print("\(ProjectDataManager.shared.getAllProjects().count) ")
+        print("\(DepensesDataManager.shared.getAllDepenses().count) ")
+    }
     
     @IBAction func onClickButton(_ sender: UIButton) {
         name = sender.titleLabel!.text!
         performSegue(withIdentifier: "projetButtonToProjectManage", sender: self)
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
