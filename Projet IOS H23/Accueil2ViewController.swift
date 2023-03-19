@@ -15,9 +15,6 @@ class Accueil2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for x in DepenseDAO.shared.getProjectUpcomingPayments(project_name: "YUL Condominium"){
-            print(x.description)
-        }
         
     }
     

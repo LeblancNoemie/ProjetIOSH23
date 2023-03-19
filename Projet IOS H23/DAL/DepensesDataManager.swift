@@ -89,7 +89,7 @@ class DepensesDataManager{
     /*
      * 'Read' function
      */
-    func getAllDepenses() -> [Depense] {
+    func getAll() -> [Depense] {
         let request : NSFetchRequest<Depense> = Depense.fetchRequest()
         let context = persistentContainer.viewContext
         do{
@@ -100,7 +100,7 @@ class DepensesDataManager{
         }
     }
     
-    func getDepenseByBank(bank_name: String) -> Depense{
+    func getAllByNomBanque(bank_name: String) -> Depense{
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Depense> = Depense.fetchRequest()
         let filter = NSPredicate(format: "nom_banque == %@", bank_name)
@@ -113,7 +113,18 @@ class DepensesDataManager{
         }
     }
     
-    func getDepenseByPayment(payment_mode: String) -> [Depense]{
+    func getAllByProjectName(projectName:String) -> [Depense] {
+        var res : [Depense] = []
+        for depense in getAll(){
+            if depense.projet?.nom == projectName {
+                res.append(depense)
+            }
+        }
+        print(res.count)
+        return res
+    }
+    
+    func getAllByModePaiement(payment_mode: String) -> [Depense]{
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Depense> = Depense.fetchRequest()
         let filter = NSPredicate(format: "mode_paiement == %@", payment_mode)

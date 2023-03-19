@@ -21,14 +21,12 @@ class DepenseTableViewCell: UITableViewCell {
 
 class DepensesTableViewController: UITableViewController {
 
+    var _projectName : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        print("Data received: \(_projectName)")
+        
     }
 
     // MARK: - Table view data source
@@ -40,19 +38,20 @@ class DepensesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DepensesDataManager.shared.getAllDepenses().count
+        return DepensesDataManager.shared.getAllByProjectName(projectName: _projectName).count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
 
-        let depenses = DepensesDataManager.shared.getAllDepenses()
+        let depenses = DepensesDataManager.shared.getAllByProjectName(projectName: _projectName)
+//        let depenses = DepenseDAO.shared.getByProject(project_name: _projectName)
         let depense = depenses[indexPath.row]
         
-        cell.depense_date.text = depense.date_paiement?.description
+        cell.depense_date.text = depense.date_paiement?.formatted()
         cell.depense_type.text = depense.type_depense
-        cell.depense_prix.text = " \(depense.prix?.description) $"
+        cell.depense_prix.text = "\(String(describing: depense.prix!)) $"
 
         return cell
     }
