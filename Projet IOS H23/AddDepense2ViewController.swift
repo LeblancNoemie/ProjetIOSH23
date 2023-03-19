@@ -71,15 +71,14 @@ class AddDepense2ViewController: UIViewController{
 //        @IBOutlet weak var _datePicker: UIDatePicker!
 //        @IBOutlet weak var _choixModePaiement: UIButton!
 //        @IBOutlet weak var _choixCompte: UIButton!
+        
+        //TODO:
+        /*
+         Vérifier que les champs sont pas vides
+         Ajouter une dépense
+         Débiter le compte choisi du montant de la dépense
+         Reafficher ManageProject
+         */
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
