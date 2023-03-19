@@ -8,20 +8,20 @@
 import UIKit
 
 class ManageProject2ViewController: UIViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         _projectNameLabel.text = projectName
-//        totalDepensesLabel.text = "\(ProjectDAO.shared.getTotalSpending(projectName: projectName! )) $"
+        _totalDepensesLabel.text = "\(DepenseDAO.shared.getTotalDepenses(project_name: projectName!).formatted()) $"
+        
     }
     
+    @IBOutlet weak var _totalDepensesLabel: UILabel!
     @IBOutlet weak var _projectNameLabel: UILabel!
     var projectName : String?
 
-    @IBOutlet weak var totalDepensesLabel: UILabel!
+ 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if DepenseDAO.shared.getByNomProjet(project_name: projectName!).count == 0 {

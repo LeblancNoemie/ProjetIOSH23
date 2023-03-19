@@ -28,6 +28,5 @@ class Accueil2ViewController: UIViewController {
             let vc = segue.destination as! ManageProject2ViewController
             vc.projectName = name
         }
-    }
-     
+    }     
 }

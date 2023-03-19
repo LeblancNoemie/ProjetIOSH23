@@ -17,14 +17,12 @@ class DepenseDAO {
         return DepensesDataManager.shared.getAllByProjectName(projectName: project_name)
     }
     
-    func getProjectUpcomingPayments(project_name: String) -> [Depense] {
-        var res : [Depense] = []
-        for depense in getByNomProjet(project_name: project_name){
-            if depense.mode_paiement == "Cheque" || depense.mode_paiement == "Chèque" || depense.mode_paiement == "cheque" || depense.mode_paiement == "chèque"{
-                res.append(depense)
-            }
+    func getTotalDepenses(project_name:String) -> Double{
+        var res : Double = 0.00
+        for depense in DepensesDataManager.shared.getAllByProjectName(projectName: project_name){
+            res += depense.prix as! Double
         }
-        res.sorted(by: { $0.date_paiement! < $1.date_paiement!})
         return res
+        
     }
 }

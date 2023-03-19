@@ -250,7 +250,7 @@
                     <navigationItem key="navigationItem" id="vZi-oO-Pjs"/>
                     <connections>
                         <outlet property="_projectNameLabel" destination="DOt-Fn-URb" id="ZkQ-hE-OUZ"/>
-                        <outlet property="totalDepensesLabel" destination="kH1-sj-DgP" id="BG4-23-DNm"/>
+                        <outlet property="_totalDepensesLabel" destination="kH1-sj-DgP" id="j2H-cN-hfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qz-gf-9fD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -120,7 +120,6 @@ class DepensesDataManager{
                 res.append(depense)
             }
         }
-        print(res.count)
         return res
     }
     
@@ -160,13 +159,11 @@ class DepensesDataManager{
         let request : NSFetchRequest<Depense> = Depense.fetchRequest()
         do {
             let depenses = try context.fetch(request)
-//            print("There are currently: \(depenses.count)")
             if depenses.count > 0 {
                 for depense in depenses {
                     context.delete(depense)
                 }
             }
-//            print("Items now deleted. There are \(DepensesDataManager.shared.getAllDepenses().count) items now.")
         } catch {
             print("Error \(error)")
         }

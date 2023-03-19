@@ -103,7 +103,6 @@ class ProjectDataManager {
     func getDepensesFromProject(name: String) -> [Depense]{
 //        let res : [Depense] = Array(getProjectByName(name: name).depenses as! Set<Depense>)
         let projet = getProjectByName(name: name)
-        print("[ProjectDataManager] \(projet.depenses?.count)")
         return projet.depenses?.allObjects as! [Depense]
     }
     
