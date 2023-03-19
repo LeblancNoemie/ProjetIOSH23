@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class DepensesDataManager{
     
@@ -69,7 +70,7 @@ class DepensesDataManager{
     /*
      * 'Create' function
      */
-    func saveDepense(prj : Projet, cpt:Compte, datePaiement: Date, dps_id: Int16, mode:String, prx: Double, type:String){
+    func saveDepense(prj : Projet, cpt:Compte, datePaiement: Date, dps_id: Int16, mode:String, prx: Double, type:String) -> bool {
         let context = persistentContainer.viewContext
         let newDepense = NSEntityDescription.insertNewObject(forEntityName: "Depenses", into: context)
         newDepense.setValue(prj, forKey: "projet")
@@ -81,8 +82,10 @@ class DepensesDataManager{
         newDepense.setValue(type, forKey: "type_depense")
         do{
             try context.save()
+            return true
         }catch{
             print("Error: \(error)")
+            return false
         }
     }
     
