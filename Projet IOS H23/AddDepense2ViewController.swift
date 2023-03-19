@@ -28,7 +28,7 @@ class AddDepense2ViewController: UIViewController{
         {
             let depenseDM: DepensesDataManager = DepensesDataManager()
             
-            if(depenseDM.saveDepense(prj: _Projet.text, cpt: _CompteADebiter.text, datePaiement: _Date.date, dps_id: 0, mode: _MethodeDePaiment.text, prx: Double(_Prix.text), type: _TypeDeDepense.text))
+            if(depenseDM.saveDepense(prj: _Projet.text, cpt: _CompteADebiter.text, datePaiement: _Date.date, dps_id: 0, mode: _MethodeDePaiment.text, prx: Double(_Prix.text!), type: _TypeDeDepense.text))
             {
                 confirmation(msg: "Ajoutée avec succès.")
             }else
