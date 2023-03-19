@@ -505,17 +505,6 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-b3-bbE">
-                                <rect key="frame" x="38" y="683" width="312" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Ajouter">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="vP8-5z-PRz" kind="show" id="lxL-Vf-cny"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2E-hc-7ow">
                                 <rect key="frame" x="53" y="317" width="105" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -550,24 +539,18 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date de fin:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAI-40-uKb">
-                                <rect key="frame" x="185" y="276" width="132" height="33"/>
+                                <rect key="frame" x="218" y="275" width="132" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="J9K-9W-vtK">
-                                <rect key="frame" x="183" y="312" width="120" height="44"/>
+                                <rect key="frame" x="205" y="312" width="120" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXx-15-LA4">
                                 <rect key="frame" x="50" y="431" width="300" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqh-hM-IGa">
-                                <rect key="frame" x="53" y="545" width="300" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -586,11 +569,41 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDU-ev-WQL">
+                                <rect key="frame" x="53" y="545" width="309" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <menu key="menu" id="jZk-LQ-sGN">
+                                    <children>
+                                        <command title="Item 1" id="AcG-9Y-ZRx"/>
+                                        <command title="Item 2" id="XuO-Ql-ZLh"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-b3-bbE">
+                                <rect key="frame" x="53" y="600" width="312" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Ajouter">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="vP8-5z-PRz" kind="show" id="lxL-Vf-cny"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="05d-2h-FEX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="jDK-q8-YjA"/>
+                    <connections>
+                        <outlet property="_choixCompte" destination="kDU-ev-WQL" id="uSX-ZT-hiO"/>
+                        <outlet property="_datePicker" destination="J9K-9W-vtK" id="Il8-bW-HfR"/>
+                        <outlet property="_nomFournisseur" destination="sXx-15-LA4" id="Eb1-lM-4fh"/>
+                        <outlet property="_prixConvention" destination="M2E-hc-7ow" id="uJI-0T-Ue6"/>
+                        <outlet property="_typeConvention" destination="rXv-yJ-oP2" id="IVk-w0-5St"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ha-ze-2sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -598,7 +611,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yWM-Wx-mPo"/>
+        <segue reference="lxL-Vf-cny"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="City skyline" width="1280" height="853"/>

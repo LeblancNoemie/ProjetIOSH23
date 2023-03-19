@@ -70,7 +70,7 @@ class DepensesDataManager{
     /*
      * 'Create' function
      */
-    func saveDepense(prj : Projet, cpt:Compte, datePaiement: Date, dps_id: Int16, mode:String, prx: Double, type:String) -> bool {
+    func saveDepense(prj : Projet, cpt:Compte, datePaiement: Date, dps_id: Int16, mode:String, prx: Double, type:String) -> Bool {
         let context = persistentContainer.viewContext
         let newDepense = NSEntityDescription.insertNewObject(forEntityName: "Depenses", into: context)
         newDepense.setValue(prj, forKey: "projet")

@@ -44,12 +44,8 @@ class DepensesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
-
         let depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
-        
-        
         let depense = depenses.sorted(by: { $0.date_paiement! < $1.date_paiement!})[indexPath.row]
-        
         cell.depense_date.text = depense.date_paiement?.formatted()
         cell.depense_type.text = depense.type_depense
         cell.depense_prix.text = "\(String(describing: depense.prix!)) $"
