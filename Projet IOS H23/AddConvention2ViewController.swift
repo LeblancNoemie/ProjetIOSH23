@@ -8,10 +8,11 @@
 import UIKit
 
 class AddConvention2ViewController: UIViewController {
+    
+    var _projectname : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

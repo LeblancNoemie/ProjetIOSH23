@@ -20,6 +20,7 @@
 		263B0F2E29C15984008C79DB /* DepensesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2D29C15984008C79DB /* DepensesDataManager.swift */; };
 		263B0F3029C15A9C008C79DB /* ConventionsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */; };
 		263B0F3329C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F3129C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodeld */; };
+		264D2ECA29C79D0800D182A7 /* CompteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2EC929C79D0800D182A7 /* CompteDAO.swift */; };
 		26B25D2C29C69BD8001C82AC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D2B29C69BD8001C82AC /* DataManager.swift */; };
 		26B25D2F29C6B3C2001C82AC /* DepensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */; };
 		26B25D3129C6BB5A001C82AC /* DepenseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */; };
@@ -45,6 +46,7 @@
 		263B0F2D29C15984008C79DB /* DepensesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesDataManager.swift; sourceTree = "<group>"; };
 		263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConventionsDataManager.swift; sourceTree = "<group>"; };
 		263B0F3229C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Projet_IOS_H23.xcdatamodel; sourceTree = "<group>"; };
+		264D2EC929C79D0800D182A7 /* CompteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompteDAO.swift; sourceTree = "<group>"; };
 		26B25D2B29C69BD8001C82AC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = SOURCE_ROOT; };
 		26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesTableViewController.swift; sourceTree = "<group>"; };
 		26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseDAO.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				263B0F2729C14D0A008C79DB /* ProjectDAO.swift */,
 				26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */,
+				264D2EC929C79D0800D182A7 /* CompteDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				263B0F3029C15A9C008C79DB /* ConventionsDataManager.swift in Sources */,
 				263B0F2829C14D0A008C79DB /* ProjectDAO.swift in Sources */,
 				263B0F2C29C158EF008C79DB /* ComptesDataManager.swift in Sources */,
+				264D2ECA29C79D0800D182A7 /* CompteDAO.swift in Sources */,
 				26E1B6B029B8CA7A0026FBEC /* ViewController.swift in Sources */,
 				2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */,
 				2608901229BBBACD00382F4D /* Compte2ViewController.swift in Sources */,

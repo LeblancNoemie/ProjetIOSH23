@@ -76,7 +76,7 @@ class ComptesDataManager{
         }
     }
     
-    func getProjectByBank(name: String) -> Compte{
+    func getCompteByName(name: String) -> Compte{
         let context = persistentContainer.viewContext
         let request : NSFetchRequest<Compte> = Compte.fetchRequest()
         let filter = NSPredicate(format: "nom_banque == %@", name)
