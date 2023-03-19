@@ -42,6 +42,8 @@ class DataManager{
         let c2 = Compte(context: context)
         let d1 = Depense(context: context)
         let d2 = Depense(context: context)
+        let cv1 = Convention(context: context)
+        let cv2 = Convention(context: context)
         
         p1.nom = "YUL Condominium"
         p1.id = 100
@@ -86,7 +88,22 @@ class DataManager{
     }
     
     func deleteAllDataApp(){
-        
+        ConventionsDataManager.shared.deleteAll()
+        DepensesDataManager.shared.deleteAll()
+        ComptesDataManager.shared.deleteAll()
+        ProjectDataManager.shared.deleteAll()
     }
+    
+    func generateDate(year: Int, month: Int, day:Int) -> Date {
+            var dateComponents = DateComponents()
+            dateComponents.year = year
+            dateComponents.month = month
+            dateComponents.day = day
+            dateComponents.hour = Int.random(in: 1..<23)
+            dateComponents.minute = Int.random(in: 1..<60)
+            // Create date from components
+            let userCalendar = Calendar(identifier: .gregorian) // since the components above (like year 1980) are for Gregorian
+            return userCalendar.date(from: dateComponents)!
+        }
 }
 
