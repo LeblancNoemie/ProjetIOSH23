@@ -40,10 +40,12 @@ class AddConvention2ViewController: UIViewController {
         {
             var conventionDM : ConventionsDataManager = ConventionsDataManager()
             var projetDAO : ProjectDAO = ProjectDAO()
-            var compteDAO : CompteDAO = CompteDAO()
+            var compteDM : ComptesDataManager = ComptesDataManager()
             
-            if (conventionDM.saveConvention(projet: projetDAO.getProjectByName(name: _projectname), compte: compteDAO.getByName(bank_name: _choixCompte.currentTitle!), conv_id: 0, dateFin: _datePicker.date, fournisseur: _nomFournisseur.text!, prix: (Double(_prixConvention.text!) ?? 0), conv_type: _typeConvention.text!))
+            if (conventionDM.saveConvention(projet: projetDAO.getProjectByName(name: _projectname), compte: compteDM.getCompteByName(name: _choixCompte.currentTitle!), conv_id: 0, dateFin: _datePicker.date, fournisseur: _nomFournisseur.text!, prix: (Double(_prixConvention.text!) ?? 0), conv_type: _typeConvention.text!))
             {
+                compteDM.updateCompte(oldCompteId: compteDM.getCompteByName(name: _choixCompte.currentTitle!).compte_id, newId: compteDM.getCompteByName(name: _choixCompte.currentTitle!).compte_id, newBank: compteDM.getCompteByName(name: _choixCompte.currentTitle!).nom_banque ?? "", newAmount: compteDM.getCompteByName(name: _choixCompte.currentTitle!).montant as! Double - (Double(_prixConvention.text!) ?? 0))
+                
                 return true
             }
         }

@@ -62,10 +62,12 @@ class AddDepense2ViewController: UIViewController{
         {
             var depenseDM : DepensesDataManager = DepensesDataManager()
             var projetDAO : ProjectDAO = ProjectDAO()
-            var compteDAO : CompteDAO = CompteDAO()
+            var compteDM : ComptesDataManager = ComptesDataManager()
             
-            if (depenseDM.saveDepense(prj: projetDAO.getProjectByName(name: _projectname), cpt: compteDAO.getByName(bank_name: _choixCompte.currentTitle!), datePaiement: _datePicker.date, dps_id: 0, mode: _choixModePaiement.currentTitle!, prx: Double(_prixDepense.text!) ?? 0, type: _typeDepense.text!))
+            if (depenseDM.saveDepense(prj: projetDAO.getProjectByName(name: _projectname), cpt: compteDM.getCompteByName(name: _choixCompte.currentTitle!), datePaiement: _datePicker.date, dps_id: 0, mode: _choixModePaiement.currentTitle!, prx: Double(_prixDepense.text!) ?? 0, type: _typeDepense.text!))
             {
+                compteDM.updateCompte(oldCompteId: compteDM.getCompteByName(name: _choixCompte.currentTitle!).compte_id, newId: compteDM.getCompteByName(name: _choixCompte.currentTitle!).compte_id, newBank: compteDM.getCompteByName(name: _choixCompte.currentTitle!).nom_banque ?? "", newAmount: compteDM.getCompteByName(name: _choixCompte.currentTitle!).montant as! Double - (Double(_prixDepense.text!) ?? 0))
+                
                 return true
             }
         }
