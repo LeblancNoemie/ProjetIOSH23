@@ -34,4 +34,26 @@ class AddConvention2ViewController: UIViewController {
         _choixCompte.changesSelectionAsPrimaryAction = true
     }
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if(_typeConvention.hasText && _prixConvention.hasText && (Double(_prixConvention.text!) ?? 0) > 0 && _nomFournisseur.hasText)
+        {
+            var conventionDM : ConventionsDataManager = ConventionsDataManager()
+            var projetDAO : ProjectDAO = ProjectDAO()
+            var compteDAO : CompteDAO = CompteDAO()
+            
+            if (conventionDM.saveConvention(projet: projetDAO.getProjectByName(name: _projectname), compte: compteDAO.getByName(bank_name: _choixCompte.currentTitle!), conv_id: 0, dateFin: _datePicker.date, fournisseur: _nomFournisseur.text!, prix: (Double(_prixConvention.text!) ?? 0), conv_type: _typeConvention.text!))
+            {
+                return true
+            }
+        }
+        
+        let alert = UIAlertController(title: "Ajout de Convention.", message: "Valeur Invalide dans les champs.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
+                }))
+        self.present(alert, animated: true, completion: nil)
+        
+        return false
+    }
+    
 }

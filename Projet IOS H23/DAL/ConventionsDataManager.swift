@@ -30,7 +30,7 @@ class ConventionsDataManager{
     /*
      * 'Create' function
      */
-    func saveConvention(projet : Projet, compte:Compte, conv_id : Int16, dateFin : Data, fournisseur: String, prix: Double, conv_type : String){
+    func saveConvention(projet : Projet, compte:Compte, conv_id : Int16, dateFin : Date, fournisseur: String, prix: Double, conv_type : String) -> Bool{
         let context = persistentContainer.viewContext
         let convention = NSEntityDescription.insertNewObject(forEntityName: "Convention", into: context)
         convention.setValue(projet, forKey: "projet")
@@ -42,8 +42,10 @@ class ConventionsDataManager{
         convention.setValue(conv_type, forKey: "type_convention")
         do{
             try context.save()
+            return true
         }catch{
             print("Error: \(error)")
+            return false
         }
     }
     
