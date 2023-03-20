@@ -103,17 +103,14 @@ class DepensesDataManager{
         }
     }
     
-    func getAllByNomBanque(bank_name: String) -> Depense{
-        let context = persistentContainer.viewContext
-        let request : NSFetchRequest<Depense> = Depense.fetchRequest()
-        let filter = NSPredicate(format: "nom_banque == %@", bank_name)
-        request.predicate = filter
-        do{
-            return try context.fetch(request).first!
-        }catch{
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+    func getAllByNomBanque(bank_name: String) -> [Depense]{
+        var res : [Depense] = []
+        for depense in getAll(){
+            if depense.compte?.nom_banque == bank_name {
+                res.append(depense)
+            }
         }
+        return res
     }
     
     func getAllByProjectName(projectName:String) -> [Depense] {

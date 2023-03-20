@@ -129,6 +129,7 @@
                             <constraint firstItem="ENv-KH-BOW" firstAttribute="centerX" secondItem="O2T-cB-Pcr" secondAttribute="centerX" id="vQ0-kJ-UH3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="i3l-Ru-bNV"/>
                     <connections>
                         <outlet property="pp1" destination="ENv-KH-BOW" id="Bh9-Ra-3Jf"/>
                         <outlet property="pp2" destination="tkO-FO-oKm" id="n3O-5f-5eS"/>
@@ -322,7 +323,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="anE-MC-m5h">
-                                <rect key="frame" x="207" y="315" width="118" height="44"/>
+                                <rect key="frame" x="208" y="315" width="118" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kz2-kv-DO8">
@@ -393,6 +394,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Banque Nationale">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Xnh-NM-N7f" kind="show" identifier="VersTBBN" id="rEV-AZ-13p"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-vS-iG1">
                                 <rect key="frame" x="34" y="300" width="346" height="72"/>
@@ -401,6 +405,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Banque Royale du Canada">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Xnh-NM-N7f" kind="show" identifier="VersTBRBC" id="zt5-ES-v3v"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Échéancier(s):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1l-Ci-8nt">
                                 <rect key="frame" x="35" y="418" width="167" height="33"/>
@@ -612,6 +619,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rEV-AZ-13p"/>
         <segue reference="yWM-Wx-mPo"/>
     </inferredMetricsTieBreakers>
     <resources>

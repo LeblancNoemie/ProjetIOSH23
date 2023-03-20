@@ -23,6 +23,9 @@ class DepensesTableViewController: UITableViewController {
 
     var _projectName : String = ""
     
+    var displayType : Int16 = 0 //0 => projet; 1 => Compte
+    var _compteName : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Data received: \(_projectName)")
@@ -38,13 +41,30 @@ class DepensesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
+        if(displayType == 0)
+        {
+            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
+        } else
+        {
+            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
-        let depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
+        
+        var depenses: [Depense] = []
+        
+        if(displayType == 0)
+        {
+            depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
+        }else
+        {
+            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
+        }
+        
         let depense = depenses.sorted(by: { $0.date_paiement! < $1.date_paiement!})[indexPath.row]
         cell.depense_date.text = depense.date_paiement?.formatted()
         cell.depense_type.text = depense.type_depense

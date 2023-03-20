@@ -17,6 +17,10 @@ class DepenseDAO {
         return DepensesDataManager.shared.getAllByProjectName(projectName: project_name)
     }
     
+    func getByNomBanque(banque_name: String) -> [Depense] {
+        return DepensesDataManager.shared.getAllByNomBanque(bank_name: banque_name)
+    }
+    
     func getTotalDepenses(project_name:String) -> Double{
         var res : Double = 0.00
         for depense in DepensesDataManager.shared.getAllByProjectName(projectName: project_name){
