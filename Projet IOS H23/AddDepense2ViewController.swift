@@ -56,6 +56,32 @@ class AddDepense2ViewController: UIViewController{
         _choixCompte.changesSelectionAsPrimaryAction = true
     }
 
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        
+        if(identifier == "DepenseVersManageProjet"){
+            if(_typeDepense.hasText && _prixDepense.hasText && (Double(_prixDepense.text!) ?? 0) > 0)
+            {
+                var depenseDM : DepensesDataManager = DepensesDataManager()
+                var projetDAO : ProjectDAO = ProjectDAO()
+                var compteDAO : CompteDAO = CompteDAO()
+                
+                if (depenseDM.saveDepense(prj: projetDAO.getProjectByName(name: _projectname), cpt: compteDAO.getByName(bank_name: _choixCompte.currentTitle!), datePaiement: _datePicker.date, dps_id: 0, mode: _choixModePaiement.currentTitle!, prx: Double(_prixDepense.text!) ?? 0, type: _typeDepense.text!))
+                {
+                    return true
+                } else
+                {
+                    let alert = UIAlertController(title: "Ajout de Dépense.", message: "Valeur Invalide dans les champs.", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
+                            }))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    return false
+                }
+            }
+        }
+        return false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        @IBOutlet weak var _typeDepense: UITextField!
 //        @IBOutlet weak var _prixDepense: UITextField!

@@ -154,7 +154,6 @@ class ProjectDataManager {
             if projects.count > 0 {
                 for project in projects as [Projet]{
                     context.delete(project)
-                    context
                 }
             }
         } catch {

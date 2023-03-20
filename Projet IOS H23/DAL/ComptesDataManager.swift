@@ -82,11 +82,13 @@ class ComptesDataManager{
         let filter = NSPredicate(format: "nom_banque == %@", name)
         request.predicate = filter
         do{
-            return try context.fetch(request).first!
+            return try context.fetch(request).first ?? Compte()
         }catch{
             let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            print("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        
+        return Compte()
     }
     
     /*
