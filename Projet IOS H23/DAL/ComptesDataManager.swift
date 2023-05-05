@@ -9,12 +9,13 @@ import Foundation
 import CoreData
 
 class ComptesDataManager{
+    
+    //This class is deprecated -> Now using web api for data
 
+    
    static let shared = ComptesDataManager()
     
-    
     lazy var persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "Projet_IOS_H23")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -87,7 +88,6 @@ class ComptesDataManager{
             let nserror = error as NSError
             print("Unresolved error \(nserror), \(nserror.userInfo)")
         }
-        
         return Compte()
     }
     

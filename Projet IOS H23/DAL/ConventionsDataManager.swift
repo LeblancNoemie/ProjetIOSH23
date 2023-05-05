@@ -10,6 +10,7 @@ import CoreData
 
 class ConventionsDataManager{
     
+    //This class is deprecated -> Now using web api for data
     static let shared = ConventionsDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -86,13 +87,11 @@ class ConventionsDataManager{
         let request : NSFetchRequest<Convention> = Convention.fetchRequest()
         do {
             let conventions = try context.fetch(request)
-//            print("There are currently: \(depenses.count)")
             if conventions.count > 0 {
                 for convention in conventions {
                     context.delete(convention)
                 }
             }
-//            print("Items now deleted. There are \(DepensesDataManager.shared.getAllDepenses().count) items now.")
         } catch {
             print("Error \(error)")
         }

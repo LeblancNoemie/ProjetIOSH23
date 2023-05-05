@@ -11,6 +11,7 @@ import UIKit
 
 class DepensesDataManager{
     
+    //This class is deprecated -> Now using web api for data
     static let shared = DepensesDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -168,6 +169,4 @@ class DepensesDataManager{
             print("Error \(error)")
         }
     }
-
-    
 }

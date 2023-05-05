@@ -6,17 +6,17 @@
 //
 
 import Foundation
-class Compte : Codable {
-    internal init(id: Int, montant: Decimal, type_depense: String) {
+class aCompte : Codable {
+    internal init(id: Int, montant: Decimal, nom_banque: String) {
         self.id = id
         self.montant = montant
-        self.type_depense = type_depense
+        self.nom_banque = nom_banque
     }
     
     
     var id: Int
     var montant: Decimal
-    var type_depense : String
+    var nom_banque : String
     
     
     enum CodingKeys: String, CodingKey{

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Depense  : Codable {
+class aDepense  : Codable {
     internal init(id: Int, date_paiement: Date, mode_paiement: String, prix: Decimal, type_depense: String, compteId: Int, projetId: Int) {
         self.id = id
         self.date_paiement = date_paiement

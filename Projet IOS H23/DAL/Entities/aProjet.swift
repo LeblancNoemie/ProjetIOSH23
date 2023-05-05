@@ -6,12 +6,12 @@
 //
 
 import Foundation
-class Project : Codable {
-    internal init(id: Int, nom: String) {
+class aProjet : Codable {
+    internal init(id: String, nom: String) {
         self.id = id
         self.nom = nom
     }
-    var id : Int
+    var id : String
     var nom : String
     
     enum CodingKeys: String, CodingKey{

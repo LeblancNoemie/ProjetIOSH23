@@ -7,14 +7,32 @@
 
 import UIKit
 
-class Accueil2ViewController: UIViewController {
+class Accueil2ViewController: UIViewController, WhenProjectsReady {
     @IBOutlet weak var pp1: UIButton!
     @IBOutlet weak var pp2: UIButton!
     
     var name = ""
     
+    //TODO: Enlever car pas nécessaire ici.
+    func loadData(data: [aProjet]) {
+        DispatchQueue.main.async {
+            self.apiProjects =  data
+            print("loadData : \(data)")
+            print(self.apiProjects)
+            //self.tableView.reloadData()
+        }
+    }
+    
+    //TODO: Enlever car pas nécessaire ici.
+    var apiProjects:[aProjet] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //TODO: Enlever car pas nécessaire ici.
+        let projectsApi =  ProjetRestAPI()
+        projectsApi.whenProjectsReady = self
+        projectsApi.getAllData()
         
     }
     

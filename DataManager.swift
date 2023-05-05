@@ -10,10 +10,8 @@ import CoreData
 
 class DataManager{
     
-    //This class is used to generate all data when starting app
-    //Can also delete all the data (for testing purposes)
-    
-    //définir un singleton
+    //This class is deprecated -> Now using web api for data
+
     static let shared = DataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -33,7 +31,6 @@ class DataManager{
     
     func initAppData(){
         let context = persistentContainer.viewContext
-        
         
         //Ajout de projets sur l'application
         let p1 = Projet(context: context)

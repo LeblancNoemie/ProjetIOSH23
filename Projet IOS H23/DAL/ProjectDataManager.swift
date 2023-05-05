@@ -9,6 +9,9 @@ import Foundation
 import CoreData
 
 class ProjectDataManager {
+    
+    //This class is deprecated -> Now using web api for data
+    
     //définir un singleton
     static let shared = ProjectDataManager()
     

@@ -7,8 +7,18 @@
 
 import UIKit
 
-class Compte2ViewController: UIViewController {
 
+
+class Compte2ViewController: UIViewController, WhenComptesReady {
+
+    func loadData(data: [aCompte]) {
+        DispatchQueue.main.async {
+            self.comptes =  data
+            //self.tableView.reloadData()
+        }
+    }
+    var comptes:[aCompte] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

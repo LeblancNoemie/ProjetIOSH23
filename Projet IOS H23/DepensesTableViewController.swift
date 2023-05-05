@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class DepenseTableViewCell: UITableViewCell {
 
     @IBOutlet weak var depense_type: UILabel!
@@ -19,16 +21,29 @@ class DepenseTableViewCell: UITableViewCell {
     }
 }
 
-class DepensesTableViewController: UITableViewController {
+class DepensesTableViewController: UITableViewController, WhenDepensesReady {
 
     var _projectName : String = ""
     
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
     
+    func loadData(data: [aDepense]) {
+        DispatchQueue.main.async {
+            self.depenses =  data
+            //print("loadData : \(data)")
+            //print(self.depensesAPI)
+            //self.tableView.reloadData()
+        }
+    }
+    var depenses:[aDepense] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Data received: \(_projectName)")
+        let depensesAPI =  DepenseRestAPI()
+        depensesAPI.whenDepensesReady = self
+        depensesAPI.getAllData()
         
     }
 

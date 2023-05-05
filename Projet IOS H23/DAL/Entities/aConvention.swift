@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Convention : Codable {
+class aConvention : Codable {
     internal init(id: Int, date_fin: Date, fournisseur: String, prix: Decimal, type_convention: String, compteId: Int, projetId: Int) {
         self.id = id
         self.date_fin = date_fin
