@@ -22,6 +22,7 @@
 		263B0F3029C15A9C008C79DB /* ConventionsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */; };
 		263B0F3329C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 263B0F3129C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodeld */; };
 		264D2ECA29C79D0800D182A7 /* CompteDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264D2EC929C79D0800D182A7 /* CompteDAO.swift */; };
+		265F46F82A0582B1006B9EEE /* WebDepensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265F46F72A0582B1006B9EEE /* WebDepensesTableViewController.swift */; };
 		26B25D2C29C69BD8001C82AC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D2B29C69BD8001C82AC /* DataManager.swift */; };
 		26B25D2F29C6B3C2001C82AC /* DepensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */; };
 		26B25D3129C6BB5A001C82AC /* DepenseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */; };
@@ -57,6 +58,7 @@
 		263B0F2F29C15A9C008C79DB /* ConventionsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConventionsDataManager.swift; sourceTree = "<group>"; };
 		263B0F3229C1FBAE008C79DB /* Projet_IOS_H23.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Projet_IOS_H23.xcdatamodel; sourceTree = "<group>"; };
 		264D2EC929C79D0800D182A7 /* CompteDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompteDAO.swift; sourceTree = "<group>"; };
+		265F46F72A0582B1006B9EEE /* WebDepensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDepensesTableViewController.swift; sourceTree = "<group>"; };
 		26B25D2B29C69BD8001C82AC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = SOURCE_ROOT; };
 		26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesTableViewController.swift; sourceTree = "<group>"; };
 		26B25D3029C6BB5A001C82AC /* DepenseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseDAO.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				2608901329BBBAE400382F4D /* CreateProject2ViewController.swift */,
 				2608901529BBBAF900382F4D /* ManageProject2ViewController.swift */,
 				26B25D2E29C6B3C2001C82AC /* DepensesTableViewController.swift */,
+				265F46F72A0582B1006B9EEE /* WebDepensesTableViewController.swift */,
 			);
 			path = "Projet IOS H23";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				2608901C29BBC03900382F4D /* ProjectDataManager.swift in Sources */,
 				26B25D2F29C6B3C2001C82AC /* DepensesTableViewController.swift in Sources */,
 				263B0F3029C15A9C008C79DB /* ConventionsDataManager.swift in Sources */,
+				265F46F82A0582B1006B9EEE /* WebDepensesTableViewController.swift in Sources */,
 				26B598C129F0240B00C2F695 /* ProjetRestAPI.swift in Sources */,
 				26B598D029F024F300C2F695 /* aConvention.swift in Sources */,
 				263B0F2829C14D0A008C79DB /* ProjectDAO.swift in Sources */,

@@ -63,7 +63,7 @@ class ProjetRestAPI{
           "cache-control": "no-cache"
         ]
 
-        let url = URL(string: "https://coursios-881f.restdb.io/rest/joueurs/\(projet.id)")
+        let url = URL(string: "https://coursios-881f.restdb.io/rest/projet/\(projet.id)")
         var request = URLRequest(url: url!)
         request.allHTTPHeaderFields = headers
         request.httpMethod = "Put"
@@ -83,13 +83,11 @@ class ProjetRestAPI{
         })
         task.resume()
     }
-
     func getAllData(){
         let url = URL(string: "https://coursios-881f.restdb.io/rest/projet")
         let session = URLSession.shared
         var request = URLRequest(url:url!)
         request.addValue( "090856c38ff5313ad16f16cf7fedb307bfa13", forHTTPHeaderField: "x-api-key")
-
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
                 if let resp = response as? HTTPURLResponse, resp.statusCode == 200 {
@@ -97,7 +95,6 @@ class ProjetRestAPI{
                     let projects:[aProjet] =  try decoder.decode([aProjet].self, from: data!)
                     self.whenProjectsReady?.loadData(data: projects)
                 }
-
             }catch{
                 print("Error while getting projects : \(error)")
             }

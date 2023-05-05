@@ -7,14 +7,14 @@
 
 import Foundation
 class aCompte : Codable {
-    internal init(id: Int, montant: Decimal, nom_banque: String) {
+    internal init(id: String, montant: Decimal, nom_banque: String) {
         self.id = id
         self.montant = montant
         self.nom_banque = nom_banque
     }
     
     
-    var id: Int
+    var id: String
     var montant: Decimal
     var nom_banque : String
     

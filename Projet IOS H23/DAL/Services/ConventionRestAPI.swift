@@ -94,6 +94,10 @@ class ConventionsRestAPI{
             do {
                 if let resp = response as? HTTPURLResponse, resp.statusCode == 200 {
                     let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "YYYY-MM-dd'T'HH:mm:ss.sss'Z'"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    
                     let conventions:[aConvention] =  try decoder.decode([aConvention].self, from: data!)
                     self.whenConventionsReady?.loadData(data: conventions)
                 }

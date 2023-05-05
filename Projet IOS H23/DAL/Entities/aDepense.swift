@@ -7,7 +7,7 @@
 
 import Foundation
 class aDepense  : Codable {
-    internal init(id: Int, date_paiement: Date, mode_paiement: String, prix: Decimal, type_depense: String, compteId: Int, projetId: Int) {
+    internal init(id: String, date_paiement: Date, mode_paiement: String, prix: Decimal, type_depense: String, compteId: String, projetId: String) {
         self.id = id
         self.date_paiement = date_paiement
         self.mode_paiement = mode_paiement
@@ -17,14 +17,14 @@ class aDepense  : Codable {
         self.projetId = projetId
     }
     
-    var id: Int
+    var id: String
     var date_paiement : Date
     var mode_paiement: String
     var prix: Decimal
     var type_depense : String
     
-    var compteId: Int
-    var projetId: Int
+    var compteId: String
+    var projetId: String
     
     
     enum CodingKeys: String, CodingKey{

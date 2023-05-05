@@ -7,7 +7,7 @@
 
 import Foundation
 class aConvention : Codable {
-    internal init(id: Int, date_fin: Date, fournisseur: String, prix: Decimal, type_convention: String, compteId: Int, projetId: Int) {
+    internal init(id: String, date_fin: Date, fournisseur: String, prix: Decimal, type_convention: String, compteId: String, projetId: String) {
         self.id = id
         self.date_fin = date_fin
         self.fournisseur = fournisseur
@@ -17,15 +17,14 @@ class aConvention : Codable {
         self.projetId = projetId
     }
     
-    
-    var id: Int
+    var id: String
     var date_fin : Date
     var fournisseur: String
     var prix: Decimal
     var type_convention : String
     
-    var compteId: Int
-    var projetId: Int
+    var compteId: String
+    var projetId: String
     
     
     enum CodingKeys: String, CodingKey{

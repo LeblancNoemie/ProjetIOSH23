@@ -94,6 +94,31 @@ class DepenseRestAPI{
             do {
                 if let resp = response as? HTTPURLResponse, resp.statusCode == 200 {
                     let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "YYYY-MM-dd'T'HH:mm:ss.sss'Z'"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    let depenses:[aDepense] =  try decoder.decode([aDepense].self, from: data!)
+                    print("Fetching: \(depenses.count) items")
+                    self.whenDepensesReady?.loadData(data: depenses)
+                }
+
+            }catch{
+                print("Error while getting depenses : \(error)")
+            }
+        })
+        task.resume()
+    }
+    
+    func getDepensesBy(condition: String, value: String){
+        let url = URL(string: "https://coursios-881f.restdb.io/rest/depenses?q={\"\(condition)\":\"\(value)\"}")
+        let session = URLSession.shared
+        var request = URLRequest(url:url!)
+        request.addValue( "090856c38ff5313ad16f16cf7fedb307bfa13", forHTTPHeaderField: "x-api-key")
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                if let resp = response as? HTTPURLResponse, resp.statusCode == 200 {
+                    let decoder = JSONDecoder()
                     let depenses:[aDepense] =  try decoder.decode([aDepense].self, from: data!)
                     self.whenDepensesReady?.loadData(data: depenses)
                 }

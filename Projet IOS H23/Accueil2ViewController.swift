@@ -17,8 +17,8 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
     func loadData(data: [aProjet]) {
         DispatchQueue.main.async {
             self.apiProjects =  data
-            print("loadData : \(data)")
-            print(self.apiProjects)
+            //print("loadData : \(data)")
+            //print(self.apiProjects)
             //self.tableView.reloadData()
         }
     }
