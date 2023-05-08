@@ -30,13 +30,13 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
     
     func loadData(data: [aDepense]) {
         DispatchQueue.main.async {
-            self.depenses =  data
+            self.apiData =  data
             //print("loadData : \(data)")
             //print(self.depensesAPI)
-            //self.tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
-    var depenses:[aDepense] = []
+    var apiData:[aDepense] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         let depensesAPI =  DepenseRestAPI()
         depensesAPI.whenDepensesReady = self
         depensesAPI.getAllData()
-        
+        print(apiData)
     }
 
     // MARK: - Table view data source
@@ -56,13 +56,14 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if(displayType == 0)
-        {
-            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
-        } else
-        {
-            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
-        }
+//        if(displayType == 0)
+//        {
+//            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
+//        } else
+//        {
+//            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
+//        }
+        return apiData.count
     }
 
     
@@ -70,20 +71,21 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
         
-        var depenses: [Depense] = []
+        var depenses: [aDepense] = []
         
-        if(displayType == 0)
-        {
-            depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
-        }else
-        {
-            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
-        }
+//        if(displayType == 0)
+//        {
+//            depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
+//        }else
+//        {
+//            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
+//        }
+        depenses = apiData
         
-        let depense = depenses.sorted(by: { $0.date_paiement! < $1.date_paiement!})[indexPath.row]
-        cell.depense_date.text = depense.date_paiement?.formatted()
+        let depense = depenses.sorted(by: { $0.date_paiement < $1.date_paiement})[indexPath.row]
+        cell.depense_date.text = depense.date_paiement.formatted()
         cell.depense_type.text = depense.type_depense
-        cell.depense_prix.text = "\(String(describing: depense.prix!)) $"
+        cell.depense_prix.text = "\(String(describing: depense.prix)) $"
 
         return cell
     }
