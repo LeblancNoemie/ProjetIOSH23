@@ -39,10 +39,10 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
         let dataEntries =
         [
             ChartDataEntry(x: 1.0, y: 10.0),
-            //ChartDataEntry(x: 2.0, y: 20.0),
-            //ChartDataEntry(x: 3.0, y: 30.0),
-            //ChartDataEntry(x: 4.0, y: 40.0),
-            //ChartDataEntry(x: 5.0, y: 50.0),
+            ChartDataEntry(x: 2.0, y: 20.0),
+            ChartDataEntry(x: 3.0, y: 30.0),
+            ChartDataEntry(x: 4.0, y: 40.0),
+            ChartDataEntry(x: 5.0, y: 50.0),
         ]
     }
     

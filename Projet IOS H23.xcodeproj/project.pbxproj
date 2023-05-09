@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FC7D5E52A09B477003137FA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7D5E42A09B477003137FA /* Charts.framework */; };
-		0FC7D5E62A09B478003137FA /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7D5E42A09B477003137FA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0841D7D10C13711090F5A1B7 /* Pods_Projet_IOS_H23.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DA82A2B7D890B3DE5FD4DD /* Pods_Projet_IOS_H23.framework */; };
+		0F2F0ABA2A0A919300280756 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7D5E42A09B477003137FA /* Charts.framework */; };
+		0F2F0ABB2A0A919300280756 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7D5E42A09B477003137FA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900829BBB94600382F4D /* Accueil2ViewController.swift */; };
 		2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */; };
 		2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */; };
@@ -51,7 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0FC7D5E62A09B478003137FA /* Charts.framework in Embed Frameworks */,
+				0F2F0ABB2A0A919300280756 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		0FC7D5E42A09B477003137FA /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22C3A3F1D18E0A3BB17FF087 /* Pods-Projet IOS H23.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet IOS H23.release.xcconfig"; path = "Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23.release.xcconfig"; sourceTree = "<group>"; };
 		2608900829BBB94600382F4D /* Accueil2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accueil2ViewController.swift; sourceTree = "<group>"; };
 		2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConvention2ViewController.swift; sourceTree = "<group>"; };
 		2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepense2ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,8 @@
 		26E1B6B729B8CAA20026FBEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26E1B6BA29B8CAA20026FBEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26E1B6BC29B8CAA20026FBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2DA82A2B7D890B3DE5FD4DD /* Pods_Projet_IOS_H23.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Projet_IOS_H23.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C802D589C84FCBA09088ADA5 /* Pods-Projet IOS H23.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet IOS H23.debug.xcconfig"; path = "Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,17 +106,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FC7D5E52A09B477003137FA /* Charts.framework in Frameworks */,
+				0F2F0ABA2A0A919300280756 /* Charts.framework in Frameworks */,
+				0841D7D10C13711090F5A1B7 /* Pods_Projet_IOS_H23.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091F91E4F3F08368F4824756 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C802D589C84FCBA09088ADA5 /* Pods-Projet IOS H23.debug.xcconfig */,
+				22C3A3F1D18E0A3BB17FF087 /* Pods-Projet IOS H23.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		0FC7D5E32A09B477003137FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0FC7D5E42A09B477003137FA /* Charts.framework */,
+				A2DA82A2B7D890B3DE5FD4DD /* Pods_Projet_IOS_H23.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 				26E1B6AA29B8CA7A0026FBEC /* Projet IOS H23 */,
 				26E1B6A929B8CA7A0026FBEC /* Products */,
 				0FC7D5E32A09B477003137FA /* Frameworks */,
+				091F91E4F3F08368F4824756 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,10 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26E1B6BF29B8CAA20026FBEC /* Build configuration list for PBXNativeTarget "Projet IOS H23" */;
 			buildPhases = (
+				3FEF7749B651602B896C5F92 /* [CP] Check Pods Manifest.lock */,
 				26E1B6A429B8CA7A0026FBEC /* Sources */,
 				26E1B6A529B8CA7A0026FBEC /* Frameworks */,
 				26E1B6A629B8CA7A0026FBEC /* Resources */,
 				0FC7D5E72A09B478003137FA /* Embed Frameworks */,
+				27E7A54A82269AD7A96D30A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +292,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27E7A54A82269AD7A96D30A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FEF7749B651602B896C5F92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Projet IOS H23-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26E1B6A429B8CA7A0026FBEC /* Sources */ = {
@@ -450,6 +511,7 @@
 		};
 		26E1B6C029B8CAA20026FBEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C802D589C84FCBA09088ADA5 /* Pods-Projet IOS H23.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,6 +539,7 @@
 		};
 		26E1B6C129B8CAA20026FBEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22C3A3F1D18E0A3BB17FF087 /* Pods-Projet IOS H23.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
