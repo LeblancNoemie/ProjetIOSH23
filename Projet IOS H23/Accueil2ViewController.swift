@@ -8,7 +8,20 @@
 import Charts
 import UIKit
 
-class Accueil2ViewController: UIViewController, WhenProjectsReady {
+class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesReady {
+    
+    // - - - Pie Chart Data \/\/
+    
+    func loadData(data: [aCompte]) {
+        DispatchQueue.main.async {
+            self.apiComptes = data
+        }
+    }
+    
+    var apiComptes:[aCompte] = []
+    
+    // - - -
+    
     @IBOutlet weak var pp1: UIButton!
     @IBOutlet weak var pp2: UIButton!
     
@@ -35,24 +48,34 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
         projectsApi.whenProjectsReady = self
         projectsApi.getAllData()
         
+        // - - - Pie Chart Data \/\/
+       
+        var dataEntries:[PieChartDataEntry] = []
         
-        let dataEntries =
-        [
-            ChartDataEntry(x: 1.0, y: 10.0),
-            ChartDataEntry(x: 2.0, y: 20.0),
-            ChartDataEntry(x: 3.0, y: 30.0),
-            ChartDataEntry(x: 4.0, y: 40.0),
-            ChartDataEntry(x: 5.0, y: 50.0),
-        ]
+        var i:Int = 0
+        for c: aCompte in apiComptes
+        {
+            dataEntries[i] = PieChartDataEntry(value: 20, label: "compte 1")
+            i += 1
+        }
         
-        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Units Sold")
-        let chartData = LineChartData(dataSet: chartDataSet)
-        lineChart.data = chartData
+        // - - - Pie Chart Set Up \/\/
         
-        lineChart.xAxis.labelPosition = .bottom
-        lineChart.xAxis.drawGridLinesEnabled = true
-        lineChart.rightAxis.enabled = false
-        lineChart.legend.enabled = false
+        
+        
+        let dataset = PieChartDataSet(entries: dataEntries, label: "")
+        //dataset.colors = [.green, .red]
+        dataset.sliceSpace = 2
+        dataset.selectionShift = 5
+        let data = PieChartData(dataSet: dataset)
+        data.setValueTextColor(.clear)
+        
+        pieChart.data = data
+        pieChart.legend.textColor = UIColor.white
+        pieChart.chartDescription.text = "Account Balance"
+        pieChart.legend.enabled = true
+        pieChart.legend.horizontalAlignment = .right
+        pieChart.animate(xAxisDuration: 1.5, easingOption: .easeInOutBack)
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
@@ -68,5 +91,5 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
     }
     
     
-    @IBOutlet weak var lineChart: LineChartView!
+    @IBOutlet weak var pieChart: PieChartView!
 }
