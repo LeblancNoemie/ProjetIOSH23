@@ -5,6 +5,7 @@
 //  Created by Noemie Leblanc Lessard on 2023-03-10.
 //
 
+import Charts
 import UIKit
 
 class Accueil2ViewController: UIViewController, WhenProjectsReady {
@@ -34,6 +35,24 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
         projectsApi.whenProjectsReady = self
         projectsApi.getAllData()
         
+        
+        let dataEntries =
+        [
+            ChartDataEntry(x: 1.0, y: 10.0),
+            ChartDataEntry(x: 2.0, y: 20.0),
+            ChartDataEntry(x: 3.0, y: 30.0),
+            ChartDataEntry(x: 4.0, y: 40.0),
+            ChartDataEntry(x: 5.0, y: 50.0),
+        ]
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Units Sold")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        lineChart.data = chartData
+        
+        lineChart.xAxis.labelPosition = .bottom
+        lineChart.xAxis.drawGridLinesEnabled = true
+        lineChart.rightAxis.enabled = false
+        lineChart.legend.enabled = false
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
@@ -46,5 +65,8 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
             let vc = segue.destination as! ManageProject2ViewController
             vc.projectName = name
         }
-    }     
+    }
+    
+    
+    @IBOutlet weak var lineChart: LineChartView!
 }
