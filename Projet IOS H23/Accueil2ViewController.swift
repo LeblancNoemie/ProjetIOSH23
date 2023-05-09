@@ -8,13 +8,20 @@
 import Charts
 import UIKit
 
-class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesReady {
+class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesReady, WhenDepensesReady {
+    func loadData(data: [aDepense]) {
+            DispatchQueue.main.async {
+            self.apiDepense = data
+        }
+    }
+    var apiDepense: [aDepense] = []
     
     // - - - Pie Chart Data \/\/
     
     func loadData(data: [aCompte]) {
         DispatchQueue.main.async {
             self.apiComptes = data
+            self.fillChart()
         }
     }
     
@@ -49,31 +56,36 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesRe
         projectsApi.getAllData()
         
         // - - - Pie Chart Data \/\/
-       
+        
+        let comptesAPI = CompteRestAPI()
+        comptesAPI.whenComptesReady = self
+        comptesAPI.getAllData()
+        
+        
+    }
+    
+    func fillChart()
+    {
         var dataEntries:[PieChartDataEntry] = []
         
-        var i:Int = 0
         for c: aCompte in apiComptes
         {
-            dataEntries[i] = PieChartDataEntry(value: Double(truncating: c.montant as NSNumber), label: c.nom_banque)
-            i += 1
+            dataEntries.append(PieChartDataEntry(value: c.montant, label: c.nom_banque))
         }
         
         // - - - Pie Chart Set Up \/\/
         
-        
-        
         let dataset = PieChartDataSet(entries: dataEntries, label: "")
-        //dataset.colors = [.green, .red]
+        dataset.colors = [.red, .orange, .systemRed, .yellow, .systemOrange, .systemYellow]
         dataset.sliceSpace = 2
         dataset.selectionShift = 5
         let data = PieChartData(dataSet: dataset)
         data.setValueTextColor(.clear)
-        
+        //pieChart.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: 400, height: 400))
         pieChart.data = data
         pieChart.holeColor = UIColor.clear
         pieChart.legend.textColor = UIColor.white
-        pieChart.chartDescription.text = "Account Balance"
+        pieChart.chartDescription.text = ""
         pieChart.legend.enabled = true
         pieChart.legend.horizontalAlignment = .right
         pieChart.animate(xAxisDuration: 1.5, easingOption: .easeInOutBack)
@@ -90,7 +102,6 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesRe
             vc.projectName = name
         }
     }
-    
     
     @IBOutlet weak var pieChart: PieChartView!
 }

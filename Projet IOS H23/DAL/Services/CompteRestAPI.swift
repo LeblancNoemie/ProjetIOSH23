@@ -98,6 +98,7 @@ class CompteRestAPI{
                     dateFormatter.dateFormat = "YYYY-MM-dd'T'HH:mm:ss.sss'Z'"
                     decoder.dateDecodingStrategy = .formatted(dateFormatter)
                     let comptes:[aCompte] =  try decoder.decode([aCompte].self, from: data!)
+                    print(comptes.count)
                     self.whenComptesReady?.loadData(data: comptes)
                 }
 
