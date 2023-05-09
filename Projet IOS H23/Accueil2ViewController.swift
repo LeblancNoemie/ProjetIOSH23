@@ -55,7 +55,7 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesRe
         var i:Int = 0
         for c: aCompte in apiComptes
         {
-            dataEntries[i] = PieChartDataEntry(value: 20, label: "compte 1")
+            dataEntries[i] = PieChartDataEntry(value: Double(truncating: c.montant as NSNumber), label: c.nom_banque)
             i += 1
         }
         
@@ -71,6 +71,7 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesRe
         data.setValueTextColor(.clear)
         
         pieChart.data = data
+        pieChart.holeColor = UIColor.clear
         pieChart.legend.textColor = UIColor.white
         pieChart.chartDescription.text = "Account Balance"
         pieChart.legend.enabled = true
