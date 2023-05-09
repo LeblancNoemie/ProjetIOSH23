@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0841D7D10C13711090F5A1B7 /* Pods_Projet_IOS_H23.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DA82A2B7D890B3DE5FD4DD /* Pods_Projet_IOS_H23.framework */; };
 		0F2F0ABA2A0A919300280756 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7D5E42A09B477003137FA /* Charts.framework */; };
-		0F2F0ABB2A0A919300280756 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7D5E42A09B477003137FA /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2608900929BBB94600382F4D /* Accueil2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900829BBB94600382F4D /* Accueil2ViewController.swift */; };
 		2608900C29BBBA9100382F4D /* AddConvention2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */; };
 		2608900E29BBBAA100382F4D /* AddDepense2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */; };
@@ -52,7 +51,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0F2F0ABB2A0A919300280756 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +118,6 @@
 				C802D589C84FCBA09088ADA5 /* Pods-Projet IOS H23.debug.xcconfig */,
 				22C3A3F1D18E0A3BB17FF087 /* Pods-Projet IOS H23.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

@@ -44,6 +44,15 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady {
             ChartDataEntry(x: 4.0, y: 40.0),
             ChartDataEntry(x: 5.0, y: 50.0),
         ]
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Units Sold")
+        let chartData = LineChartData(dataSet: chartDataSet)
+        lineChart.data = chartData
+        
+        lineChart.xAxis.labelPosition = .bottom
+        lineChart.xAxis.drawGridLinesEnabled = true
+        lineChart.rightAxis.enabled = false
+        lineChart.legend.enabled = false
     }
     
     @IBAction func onClickButton(_ sender: UIButton) {
