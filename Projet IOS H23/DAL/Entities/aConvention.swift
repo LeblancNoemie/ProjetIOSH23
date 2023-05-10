@@ -7,7 +7,7 @@
 
 import Foundation
 class aConvention : Codable {
-    internal init(id: String, date_fin: Date, fournisseur: String, prix: Decimal, type_convention: String, compteId: String, projetId: String) {
+    internal init(id: String, date_fin: Date, fournisseur: String, prix: Double, type_convention: String, compteId: String, projetId: String) {
         self.id = id
         self.date_fin = date_fin
         self.fournisseur = fournisseur
@@ -20,7 +20,7 @@ class aConvention : Codable {
     var id: String
     var date_fin : Date
     var fournisseur: String
-    var prix: Decimal
+    var prix: Double
     var type_convention : String
     
     var compteId: String

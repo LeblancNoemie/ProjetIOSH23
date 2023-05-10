@@ -85,6 +85,8 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesRe
         pieChart.data = data
         pieChart.holeColor = UIColor.clear
         pieChart.legend.textColor = UIColor.white
+        pieChart.legend.verticalAlignment = .bottom
+        pieChart.legend.horizontalAlignment = .center
         pieChart.chartDescription.text = ""
         pieChart.legend.enabled = true
         pieChart.legend.horizontalAlignment = .right
@@ -100,6 +102,8 @@ class Accueil2ViewController: UIViewController, WhenProjectsReady, WhenComptesRe
         if (segue.identifier == "projetButtonToProjectManage") {
             let vc = segue.destination as! ManageProject2ViewController
             vc.projectName = name
+            vc.projectID = apiProjects.first(where: { $0.nom == name
+            })!.id
         }
     }
     
