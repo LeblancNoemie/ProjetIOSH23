@@ -8,7 +8,16 @@
 import UIKit
 import Charts
 
-class ManageProject2ViewController: UIViewController, WhenDepensesReady{
+class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenConventionsReady{
+    
+    func loadData(data: [aConvention]) {
+        DispatchQueue.main.async {
+            self.apiConvention = data
+            self.fillGraphConvention()
+        }
+    }
+    var apiConvention: [aConvention] = []
+    
     func loadData(data: [aDepense]) {
         DispatchQueue.main.async {
             self.apiDepense = data
@@ -17,18 +26,19 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady{
     }
     var apiDepense: [aDepense] = []
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         _projectNameLabel.text = projectName
         _totalDepensesLabel.text = "\(DepenseDAO.shared.getTotalDepenses(project_name: projectName).formatted()) $"
         
-        
         let depenseAPI = DepenseRestAPI()
         depenseAPI.whenDepensesReady = self
-        depenseAPI.getDepensesBy(condition: "projet", value: projectName)
+        depenseAPI.getDepensesBy(condition: "projetId", value: projectID) //#TODO passez id
+        
+        let conventionAPI = ConventionsRestAPI()
+        conventionAPI.whenConventionsReady = self
+        conventionAPI.getAllData()
     }
     
     func fillGraphDepense()
@@ -40,7 +50,7 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady{
         }
         
         let depenseEntries = [BarChartDataEntry(x: 1, yValues: yValuesData)]
-        let depenseDataSet = BarChartDataSet(entries: depenseEntries, label: projectName)
+        let depenseDataSet = BarChartDataSet(entries: depenseEntries, label: "Dépenses")
         depenseDataSet.colors = [.red, .orange, .yellow]
         
         graphDataSets.append(depenseDataSet)
@@ -50,7 +60,17 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady{
     
     func fillGraphConvention()
     {
+        var yValuesData:[Double] = []
+        for c in apiConvention
+        {
+            yValuesData.append(c.prix)
+        }
         
+        let conventionEntries = [BarChartDataEntry(x:1,  yValues: yValuesData)]
+        let conventionDataSet = BarChartDataSet(entries: conventionEntries, label: "Conventions")
+        conventionDataSet.colors = [.cyan, .blue, .purple]
+        
+        graphDataSets.append(conventionDataSet)
     }
     
     func fillGraph()
@@ -59,9 +79,16 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady{
         
         barChart.data = data
         barChart.xAxis.labelPosition = .bottom
-        barChart.xAxis
-        
+        barChart.xAxis.drawGridLinesEnabled = false
+        barChart.leftAxis.axisMinimum = 0
+        barChart.rightAxis.axisMinimum = 0
+        barChart.legend.horizontalAlignment = .center
+        barChart.legend.verticalAlignment = .bottom
+        barChart.legend.textColor = .white
+        barChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
     }
+    
+    var projectID: String = ""
     
     // - - -
     

@@ -110,7 +110,9 @@ class DepenseRestAPI{
     }
     
     func getDepensesBy(condition: String, value: String){
-        let url = URL(string: "https://coursios-881f.restdb.io/rest/depenses?q={\"\(condition)\":\"\(value)\"}")
+        let url = URL(string: """
+                      https://coursios-881f.restdb.io/rest/depenses?q={"\(condition)":"\(value)"}
+                      """)
         let session = URLSession.shared
         var request = URLRequest(url:url!)
         request.addValue( "090856c38ff5313ad16f16cf7fedb307bfa13", forHTTPHeaderField: "x-api-key")
