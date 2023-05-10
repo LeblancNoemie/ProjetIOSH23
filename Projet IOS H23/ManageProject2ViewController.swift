@@ -54,6 +54,8 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         depenseDataSet.colors = [.red, .orange, .yellow]
         
         graphDataSets.append(depenseDataSet)
+        
+        fillGraph()
     }
     
     var graphDataSets: [BarChartDataSet] = []
@@ -71,6 +73,8 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         conventionDataSet.colors = [.cyan, .blue, .purple]
         
         graphDataSets.append(conventionDataSet)
+        
+        fillGraph()
     }
     
     func fillGraph()
