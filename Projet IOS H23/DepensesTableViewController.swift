@@ -15,7 +15,6 @@ class DepenseTableViewCell: UITableViewCell {
     @IBOutlet weak var type_paiement: UILabel!
     @IBOutlet weak var date_paiement: UILabel!
     @IBOutlet weak var montant_depense: UILabel!
-    @IBOutlet weak var deleteDepense: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +34,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
             self.apiData =  data
             print("loadData : \(data)")
             //print(self.depensesAPI)
+            print(self.apiData[1].date_paiement.formatted())
             self.tableView.reloadData()
         }
     }
@@ -48,6 +48,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         depensesAPI.whenDepensesReady = self
         depensesAPI.getAllData()
         print(apiData)
+        
     }
 
     // MARK: - Table view data source
@@ -86,8 +87,8 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         //depenses = apiData
         
         let depense = apiData.sorted(by: {$0.date_paiement < $1.date_paiement})[indexPath.row]
-        
-        cell.date_paiement.text = depense.date_paiement.formatted()
+        print("La date trouvée est: \(depense.date_paiement)")
+        cell.date_paiement.text = String(depense.date_paiement.formatted())
         cell.montant_depense.text = "\(String(describing: depense.prix)) $"
         cell.nom_depense.text = depense.type_depense
         cell.type_paiement.text = depense.mode_paiement
@@ -111,7 +112,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
