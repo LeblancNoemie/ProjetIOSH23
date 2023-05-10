@@ -101,7 +101,6 @@ class CompteRestAPI{
                     print(comptes.count)
                     self.whenComptesReady?.loadData(data: comptes)
                 }
-
             }catch{
                 print("Error while getting comptes : \(error)")
             }

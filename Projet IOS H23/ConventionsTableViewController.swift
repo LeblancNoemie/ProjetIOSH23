@@ -25,7 +25,7 @@ class ConventionTableViewCell: UITableViewCell {
 class ConventionsTableViewController: UITableViewController, WhenConventionsReady {
     func loadData(data: [aConvention]) {
         DispatchQueue.main.async {
-            self.conventions =  data
+            self.apiData =  data
             //print("loadData : \(data)")
             //print(self.depensesAPI)
             //self.tableView.reloadData()
@@ -37,7 +37,7 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
     
-    var conventions:[aConvention] = []
+    var apiData:[aConvention] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,34 +57,27 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if(displayType == 0)
-        {
-            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
-        } else
-        {
-            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
-        }
+//        if(displayType == 0)
+//        {
+//            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
+//        } else
+//        {
+//            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
+//        }
+        return apiData.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
-    
-        //Changer le contenu de ça:
-        var depenses: [Depense] = []
-        if(displayType == 0)
-        {
-            depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
-        }else
-        {
-            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConventionCellIdentifier", for: indexPath) as! ConventionTableViewCell
         
-        let depense = depenses.sorted(by: { $0.date_paiement! < $1.date_paiement!})[indexPath.row]
-        cell.depense_date.text = depense.date_paiement?.formatted()
-        cell.depense_type.text = depense.type_depense
-        cell.depense_prix.text = "\(String(describing: depense.prix!)) $"
+        let convention = apiData.sorted(by: { $0.date_fin! < $1.date_fin!})[indexPath.row]
+        
+        cell.date_fin.text = convention.date_fin?.formatted()
+        cell.nom_convention.text = convention.type_convention
+        cell.nom_fournisseur = convention.fournisseur
+        cell.montant_convention = "\(String(describing: convention.date_fin)) $"
         return cell
     }
 }

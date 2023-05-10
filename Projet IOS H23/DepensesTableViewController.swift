@@ -32,7 +32,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
     func loadData(data: [aDepense]) {
         DispatchQueue.main.async {
             self.apiData =  data
-            //print("loadData : \(data)")
+            print("loadData : \(data)")
             //print(self.depensesAPI)
             self.tableView.reloadData()
         }
@@ -43,6 +43,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         super.viewDidLoad()
         print("Data received: \(_projectName)")
         let depensesAPI =  DepenseRestAPI()
+        
         depensesAPI.whenDepensesReady = self
         depensesAPI.getAllData()
         print(apiData)
@@ -72,7 +73,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
         
-        var depenses: [aDepense] = []
+        //var depenses: [aDepense] = []
         
 //        if(displayType == 0)
 //        {
@@ -81,13 +82,14 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
 //        {
 //            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
 //        }
-        depenses = apiData
+        //depenses = apiData
         
-        let depense = depenses.sorted(by: { $0.date_paiement < $1.date_paiement})[indexPath.row]
-        cell.depense_date.text = depense.date_paiement.formatted()
-        cell.depense_type.text = depense.type_depense
-        cell.depense_prix.text = "\(String(describing: depense.prix)) $"
-
+        let depense = apiData.sorted(by: {$0.date_paiement < $1.date_paiement})[indexPath.row]
+        
+        cell.date_paiement.text = depense.date_paiement.formatted()
+        cell.montant_depense.text = "\(String(describing: depense.prix)) $"
+        cell.nom_depense.text = depense.type_depense
+        cell.type_paiement.text = depense.mode_paiement
         return cell
     }
     
