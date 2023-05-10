@@ -110,11 +110,24 @@ class ConventionsRestAPI{
     }
     
     func getConventionBy(condition: String, value: String){
-        let url = URL(string: """
-                      https://coursios-881f.restdb.io/rest/conventions?q={"\(condition)":"\(value)"}
-                      """)
+        //let url = URL(string:https://coursios-881f.restdb.io/rest/conventions?q={"\(condition)":"\(value)"})
+        
+        let queryItem = URLQueryItem(name: "q", value:
+        """
+        {"\(condition)":"\(value)"}
+        """)
+        
+        var urlComp = URLComponents()
+        urlComp.scheme = "https"
+        urlComp.host = "coursios-881f.restdb.io"
+        urlComp.path = "/rest/conventions"
+        urlComp.queryItems = [queryItem]
+        
+        var request = URLRequest(url: urlComp.url!)
+        
+        
         let session = URLSession.shared
-        var request = URLRequest(url:url!)
+        //var request = URLRequest(url:url!)
         request.addValue( "090856c38ff5313ad16f16cf7fedb307bfa13", forHTTPHeaderField: "x-api-key")
 
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
