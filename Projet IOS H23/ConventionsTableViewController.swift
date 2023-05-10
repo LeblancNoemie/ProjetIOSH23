@@ -60,6 +60,10 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
         return apiData.count
     }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 100.0;//Your custom row height
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

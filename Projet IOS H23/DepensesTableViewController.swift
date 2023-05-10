@@ -24,12 +24,9 @@ class DepenseTableViewCell: UITableViewCell {
 }
 
 class DepensesTableViewController: UITableViewController, WhenDepensesReady {
-
     var _projectName : String = ""
-    
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
-    
     func loadData(data: [aDepense]) {
         DispatchQueue.main.async {
             self.apiData =  data
@@ -40,16 +37,13 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         }
     }
     var apiData:[aDepense] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Data received: \(_projectName)")
         let depensesAPI =  DepenseRestAPI()
-        
         depensesAPI.whenDepensesReady = self
         depensesAPI.getAllData()
         print(apiData)
-        
     }
 
     // MARK: - Table view data source
@@ -60,32 +54,17 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        if(displayType == 0)
-//        {
-//            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
-//        } else
-//        {
-//            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
-//        }
         return apiData.count
     }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 100.0;//Your custom row height
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
-        
-        //var depenses: [aDepense] = []
-        
-//        if(displayType == 0)
-//        {
-//            depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
-//        }else
-//        {
-//            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
-//        }
-        //depenses = apiData
         
         let depense = apiData.sorted(by: {$0.date_paiement < $1.date_paiement})[indexPath.row]
         print("La date trouvée est: \(depense.date_paiement)")
