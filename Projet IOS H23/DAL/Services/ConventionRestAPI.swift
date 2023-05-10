@@ -139,7 +139,7 @@ class ConventionsRestAPI{
                 }
 
             }catch{
-                print("Error while getting depenses : \(error)")
+                print("Error while getting conventions : \(error)")
             }
         })
         task.resume()
