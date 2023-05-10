@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2T-cB-Pcr">
-                                <rect key="frame" x="0.0" y="-47" width="414" height="983"/>
+                                <rect key="frame" x="0.0" y="-51" width="414" height="987"/>
                                 <color key="backgroundColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -62,7 +61,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour, John" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmo-eY-ewr">
-                                <rect key="frame" x="20" y="73" width="262" height="66"/>
+                                <rect key="frame" x="20" y="69" width="262" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="ZAz-K3-RrO"/>
                                 </constraints>
@@ -71,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWB-Nf-fUg">
-                                <rect key="frame" x="33" y="138" width="348" height="58"/>
+                                <rect key="frame" x="33" y="134" width="348" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="cdI-V7-H8h"/>
                                     <constraint firstAttribute="height" constant="58" id="z76-yS-T6w"/>
@@ -103,7 +102,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNH-P1-CcZ" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="27" y="505" width="367" height="327"/>
+                                <rect key="frame" x="87" y="616" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -143,14 +142,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.02898550724638" y="-123.21428571428571"/>
+            <point key="canvasLocation" x="-142" y="-123"/>
         </scene>
         <!--Create Project2 View Controller-->
         <scene sceneID="uY1-Qs-RTk">
             <objects>
                 <viewController id="57G-3B-02F" customClass="CreateProject2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bd-YA-Xgv" customClass="CreateProject">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="BBg-G2-BYX">
@@ -200,7 +199,7 @@
             <objects>
                 <viewController id="vP8-5z-PRz" customClass="ManageProject2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OQa-Hh-4kw" customClass="Pro">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="WbP-WA-XuH">
@@ -291,7 +290,7 @@
             <objects>
                 <viewController id="q3b-4o-s63" customClass="AddDepense2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j2Y-5o-uu2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="Dhc-qa-bvj">
@@ -433,7 +432,7 @@
             <objects>
                 <viewController id="5AP-kB-9gF" customClass="Compte2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEX-wo-YA6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21h-Xp-ZDM">
@@ -503,11 +502,11 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             <objects>
                 <tableViewController id="Xnh-NM-N7f" customClass="DepensesTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="qHp-Ch-JVB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepenseCellIdentifier" rowHeight="125" id="VgC-BI-LfX" customClass="ConventionTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="125"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepenseCellIdentifier" rowHeight="125" id="VgC-BI-LfX" customClass="DepenseTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VgC-BI-LfX" id="zRu-WQ-BQQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
@@ -548,9 +547,13 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="date_paiement" destination="F2N-30-UEI" id="FGS-dB-EuM"/>
                                     <outlet property="depense_date" destination="F2N-30-UEI" id="dfr-YP-Ygd"/>
                                     <outlet property="depense_prix" destination="ZUU-cE-bI6" id="Asd-F1-h4i"/>
                                     <outlet property="depense_type" destination="Qsi-6u-lBO" id="REy-7U-V2z"/>
+                                    <outlet property="montant_depense" destination="ZUU-cE-bI6" id="plg-my-icK"/>
+                                    <outlet property="nom_depense" destination="Qsi-6u-lBO" id="doG-sc-EWy"/>
+                                    <outlet property="type_paiement" destination="Rwj-QR-ijF" id="7O1-aI-CAC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -579,7 +582,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             <objects>
                 <viewController id="0cx-5w-8ef" customClass="AddConvention2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igh-ZZ-BFn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-PV-Tle">
@@ -711,11 +714,11 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             <objects>
                 <tableViewController id="2bw-wb-6Bw" customClass="ConventionsTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="OR8-w9-rut">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepenseCellIdentifier" rowHeight="125" id="Cfn-5C-No3" customClass="ConventionTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="125"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConventionCellIdentifier" rowHeight="125" id="Cfn-5C-No3" customClass="ConventionTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cfn-5C-No3" id="1gG-iF-EAU">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
@@ -761,9 +764,13 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="date_fin" destination="fbh-vr-Uxi" id="59M-uX-GWh"/>
                                     <outlet property="depense_date" destination="fbh-vr-Uxi" id="j9e-sR-mFV"/>
                                     <outlet property="depense_prix" destination="hAX-Ks-21B" id="Qu7-Nn-Bq7"/>
                                     <outlet property="depense_type" destination="be6-de-ujZ" id="nY2-7F-ja9"/>
+                                    <outlet property="montant_convention" destination="hAX-Ks-21B" id="2tH-Bd-6gj"/>
+                                    <outlet property="nom_convention" destination="be6-de-ujZ" id="nJK-0H-cGD"/>
+                                    <outlet property="nom_fournisseur" destination="ESE-cM-Tu4" id="lPL-6O-rEm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -790,7 +797,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="211-vW-FMD"/>
-        <segue reference="ddH-OI-fzg"/>
+        <segue reference="yWM-Wx-mPo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Blurred City skyline" width="1280" height="853"/>

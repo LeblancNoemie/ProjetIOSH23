@@ -10,10 +10,11 @@ import UIKit
 
 
 class DepenseTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var depense_type: UILabel!
-    @IBOutlet weak var depense_date: UILabel!
-    @IBOutlet weak var depense_prix: UILabel!
+    
+    @IBOutlet weak var nom_depense: UILabel!
+    @IBOutlet weak var type_paiement: UILabel!
+    @IBOutlet weak var date_paiement: UILabel!
+    @IBOutlet weak var montant_depense: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
