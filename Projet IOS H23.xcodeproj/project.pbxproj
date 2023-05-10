@@ -59,7 +59,7 @@
 
 /* Begin PBXFileReference section */
 		0FC7D5E42A09B477003137FA /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22C3A3F1D18E0A3BB17FF087 /* Pods-Projet IOS H23.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet IOS H23.release.xcconfig"; path = "Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23.release.xcconfig"; sourceTree = "<group>"; };
+		2042F1F35268788F1E2D3A7C /* Pods-Projet IOS H23.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet IOS H23.debug.xcconfig"; path = "Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23.debug.xcconfig"; sourceTree = "<group>"; };
 		2608900829BBB94600382F4D /* Accueil2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accueil2ViewController.swift; sourceTree = "<group>"; };
 		2608900B29BBBA9100382F4D /* AddConvention2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConvention2ViewController.swift; sourceTree = "<group>"; };
 		2608900D29BBBAA100382F4D /* AddDepense2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepense2ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +96,7 @@
 		26E1B6BA29B8CAA20026FBEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26E1B6BC29B8CAA20026FBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2DA82A2B7D890B3DE5FD4DD /* Pods_Projet_IOS_H23.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Projet_IOS_H23.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65792D8F1A948383DC32A9E /* Pods-Projet IOS H23.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet IOS H23.release.xcconfig"; path = "Target Support Files/Pods-Projet IOS H23/Pods-Projet IOS H23.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +175,7 @@
 				26E1B6AA29B8CA7A0026FBEC /* Projet IOS H23 */,
 				26E1B6A929B8CA7A0026FBEC /* Products */,
 				0FC7D5E32A09B477003137FA /* Frameworks */,
+				5FAA147683F2BD90ED82C97D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,16 @@
 				26AB29192A0894B9000DA1D4 /* ConventionsTableViewController.swift */,
 			);
 			path = "Projet IOS H23";
+			sourceTree = "<group>";
+		};
+		5FAA147683F2BD90ED82C97D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2042F1F35268788F1E2D3A7C /* Pods-Projet IOS H23.debug.xcconfig */,
+				B65792D8F1A948383DC32A9E /* Pods-Projet IOS H23.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +509,7 @@
 		};
 		26E1B6C029B8CAA20026FBEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2042F1F35268788F1E2D3A7C /* Pods-Projet IOS H23.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,6 +537,7 @@
 		};
 		26E1B6C129B8CAA20026FBEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B65792D8F1A948383DC32A9E /* Pods-Projet IOS H23.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
