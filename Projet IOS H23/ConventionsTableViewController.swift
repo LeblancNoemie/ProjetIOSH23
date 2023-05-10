@@ -15,6 +15,7 @@ class ConventionTableViewCell: UITableViewCell {
     @IBOutlet weak var nom_fournisseur: UILabel!
     @IBOutlet weak var montant_convention: UILabel!
     @IBOutlet weak var date_fin: UILabel!
+    @IBOutlet weak var deleteConvention: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

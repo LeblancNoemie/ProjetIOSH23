@@ -15,6 +15,7 @@ class DepenseTableViewCell: UITableViewCell {
     @IBOutlet weak var type_paiement: UILabel!
     @IBOutlet weak var date_paiement: UILabel!
     @IBOutlet weak var montant_depense: UILabel!
+    @IBOutlet weak var deleteDepense: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
