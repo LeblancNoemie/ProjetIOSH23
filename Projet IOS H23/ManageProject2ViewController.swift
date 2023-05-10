@@ -38,7 +38,7 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         
         let conventionAPI = ConventionsRestAPI()
         conventionAPI.whenConventionsReady = self
-        conventionAPI.getAllData()
+        conventionAPI.getConventionBy(condition: "projetId", value: projectID)
     }
     
     func fillGraphDepense()

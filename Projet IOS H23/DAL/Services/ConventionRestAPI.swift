@@ -108,4 +108,27 @@ class ConventionsRestAPI{
         })
         task.resume()
     }
+    
+    func getConventionBy(condition: String, value: String){
+        let url = URL(string: """
+                      https://coursios-881f.restdb.io/rest/conventions?q={"\(condition)":"\(value)"}
+                      """)
+        let session = URLSession.shared
+        var request = URLRequest(url:url!)
+        request.addValue( "090856c38ff5313ad16f16cf7fedb307bfa13", forHTTPHeaderField: "x-api-key")
+
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            do {
+                if let resp = response as? HTTPURLResponse, resp.statusCode == 200 {
+                    let decoder = JSONDecoder()
+                    let conventions:[aConvention] =  try decoder.decode([aConvention].self, from: data!)
+                    self.whenConventionsReady?.loadData(data: conventions)
+                }
+
+            }catch{
+                print("Error while getting depenses : \(error)")
+            }
+        })
+        task.resume()
+    }
 }
