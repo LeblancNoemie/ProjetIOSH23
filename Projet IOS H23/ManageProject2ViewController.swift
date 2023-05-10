@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import Charts
 
-class ManageProject2ViewController: UIViewController {
+class ManageProject2ViewController: UIViewController, WhenDepensesReady{
+    func loadData(data: [aDepense]) {
+        DispatchQueue.main.async {
+            self.apiDepense = data
+            self.fillGraphDepense()
+        }
+    }
+    var apiDepense: [aDepense] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +25,45 @@ class ManageProject2ViewController: UIViewController {
         _projectNameLabel.text = projectName
         _totalDepensesLabel.text = "\(DepenseDAO.shared.getTotalDepenses(project_name: projectName).formatted()) $"
         
+        
+        let depenseAPI = DepenseRestAPI()
+        depenseAPI.whenDepensesReady = self
+        depenseAPI.getDepensesBy(condition: "projet", value: projectName)
     }
+    
+    func fillGraphDepense()
+    {
+        var yValuesData:[Double] = []
+        for d: aDepense in apiDepense
+        {
+            yValuesData.append(d.prix)
+        }
+        
+        let depenseEntries = [BarChartDataEntry(x: 1, yValues: yValuesData)]
+        let depenseDataSet = BarChartDataSet(entries: depenseEntries, label: projectName)
+        depenseDataSet.colors = [.red, .orange, .yellow]
+        
+        graphDataSets.append(depenseDataSet)
+    }
+    
+    var graphDataSets: [BarChartDataSet] = []
+    
+    func fillGraphConvention()
+    {
+        
+    }
+    
+    func fillGraph()
+    {
+        let data = BarChartData(dataSets: graphDataSets)
+        
+        barChart.data = data
+        barChart.xAxis.labelPosition = .bottom
+        barChart.xAxis
+        
+    }
+    
+    // - - -
     
     @IBOutlet weak var _totalDepensesLabel: UILabel!
     @IBOutlet weak var _projectNameLabel: UILabel!
@@ -61,4 +109,7 @@ class ManageProject2ViewController: UIViewController {
                 }
             }
         }
+    
+    
+    @IBOutlet weak var barChart: BarChartView!
 }

@@ -272,7 +272,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ew-9q-w5I">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ew-9q-w5I" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="33" y="543" width="349" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -285,6 +285,7 @@
                     <connections>
                         <outlet property="_projectNameLabel" destination="DOt-Fn-URb" id="ZkQ-hE-OUZ"/>
                         <outlet property="_totalDepensesLabel" destination="kH1-sj-DgP" id="j2H-cN-hfP"/>
+                        <outlet property="barChart" destination="0ew-9q-w5I" id="v2U-b5-ldl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qz-gf-9fD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
