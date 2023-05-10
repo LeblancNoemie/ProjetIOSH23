@@ -16,6 +16,7 @@ class DepenseTableViewCell: UITableViewCell {
     @IBOutlet weak var date_paiement: UILabel!
     @IBOutlet weak var montant_depense: UILabel!
     
+    @IBOutlet weak var deleteDepense: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,27 +24,23 @@ class DepenseTableViewCell: UITableViewCell {
 }
 
 class DepensesTableViewController: UITableViewController, WhenDepensesReady {
-
     var _projectName : String = ""
-    
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
-    
     func loadData(data: [aDepense]) {
         DispatchQueue.main.async {
             self.apiData =  data
             print("loadData : \(data)")
             //print(self.depensesAPI)
+            print(self.apiData[1].date_paiement.formatted())
             self.tableView.reloadData()
         }
     }
     var apiData:[aDepense] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Data received: \(_projectName)")
         let depensesAPI =  DepenseRestAPI()
-        
         depensesAPI.whenDepensesReady = self
         depensesAPI.getAllData()
         print(apiData)
@@ -57,36 +54,21 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        if(displayType == 0)
-//        {
-//            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
-//        } else
-//        {
-//            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
-//        }
         return apiData.count
     }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 100.0;//Your custom row height
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
         
-        //var depenses: [aDepense] = []
-        
-//        if(displayType == 0)
-//        {
-//            depenses = DepenseDAO.shared.getByNomProjet(project_name: _projectName)
-//        }else
-//        {
-//            depenses = DepenseDAO.shared.getByNomBanque(banque_name: _compteName)
-//        }
-        //depenses = apiData
-        
         let depense = apiData.sorted(by: {$0.date_paiement < $1.date_paiement})[indexPath.row]
-        
-        cell.date_paiement.text = depense.date_paiement.formatted()
+        print("La date trouvée est: \(depense.date_paiement)")
+        cell.date_paiement.text = String(depense.date_paiement.formatted())
         cell.montant_depense.text = "\(String(describing: depense.prix)) $"
         cell.nom_depense.text = depense.type_depense
         cell.type_paiement.text = depense.mode_paiement
@@ -110,7 +92,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

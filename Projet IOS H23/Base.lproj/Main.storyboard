@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2T-cB-Pcr">
-                                <rect key="frame" x="0.0" y="-47" width="414" height="983"/>
+                                <rect key="frame" x="0.0" y="-51" width="414" height="987"/>
                                 <color key="backgroundColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -62,7 +61,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour, John" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmo-eY-ewr">
-                                <rect key="frame" x="20" y="73" width="262" height="66"/>
+                                <rect key="frame" x="20" y="69" width="262" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="ZAz-K3-RrO"/>
                                 </constraints>
@@ -71,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWB-Nf-fUg">
-                                <rect key="frame" x="33" y="138" width="348" height="58"/>
+                                <rect key="frame" x="33" y="134" width="348" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="cdI-V7-H8h"/>
                                     <constraint firstAttribute="height" constant="58" id="z76-yS-T6w"/>
@@ -150,7 +149,7 @@
             <objects>
                 <viewController id="57G-3B-02F" customClass="CreateProject2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bd-YA-Xgv" customClass="CreateProject">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="BBg-G2-BYX">
@@ -200,7 +199,7 @@
             <objects>
                 <viewController id="vP8-5z-PRz" customClass="ManageProject2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OQa-Hh-4kw" customClass="Pro">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="WbP-WA-XuH">
@@ -297,7 +296,7 @@
             <objects>
                 <viewController id="q3b-4o-s63" customClass="AddDepense2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j2Y-5o-uu2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="Dhc-qa-bvj">
@@ -439,7 +438,7 @@
             <objects>
                 <viewController id="5AP-kB-9gF" customClass="Compte2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEX-wo-YA6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21h-Xp-ZDM">
@@ -509,18 +508,18 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             <objects>
                 <tableViewController id="Xnh-NM-N7f" customClass="DepensesTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="qHp-Ch-JVB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepenseCellIdentifier" rowHeight="125" id="VgC-BI-LfX" customClass="DepenseTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="125"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VgC-BI-LfX" id="zRu-WQ-BQQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom de la dépense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-6u-lBO">
-                                            <rect key="frame" x="35" y="11" width="343" height="21"/>
+                                            <rect key="frame" x="35" y="11" width="301" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.099673785269999995" green="0.43087023499999999" blue="0.67035400869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.099673785269999995" green="0.43087023499999999" blue="0.67035400869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -551,10 +550,18 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                             <color key="textColor" red="0.0041146511210000004" green="0.59135496620000005" blue="0.96044033770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5e-ic-VSb">
+                                            <rect key="frame" x="332" y="0.0" width="58" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" systemColor="systemPinkColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="trash.circle.fill" catalog="system"/>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="date_paiement" destination="F2N-30-UEI" id="FGS-dB-EuM"/>
+                                    <outlet property="deleteDepense" destination="n5e-ic-VSb" id="ieh-KO-uNN"/>
                                     <outlet property="depense_date" destination="F2N-30-UEI" id="dfr-YP-Ygd"/>
                                     <outlet property="depense_prix" destination="ZUU-cE-bI6" id="Asd-F1-h4i"/>
                                     <outlet property="depense_type" destination="Qsi-6u-lBO" id="REy-7U-V2z"/>
@@ -589,7 +596,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             <objects>
                 <viewController id="0cx-5w-8ef" customClass="AddConvention2ViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Igh-ZZ-BFn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blurred City skyline" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-PV-Tle">
@@ -721,18 +728,18 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
             <objects>
                 <tableViewController id="2bw-wb-6Bw" customClass="ConventionsTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="OR8-w9-rut">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConventionCellIdentifier" rowHeight="125" id="Cfn-5C-No3" customClass="ConventionTableViewCell" customModule="Projet_IOS_H23" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="125"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cfn-5C-No3" id="1gG-iF-EAU">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom de la convention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be6-de-ujZ">
-                                            <rect key="frame" x="31" y="11" width="345" height="21"/>
+                                            <rect key="frame" x="31" y="11" width="299" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.099673785269999995" green="0.43087023499999999" blue="0.67035400869999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -768,13 +775,18 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGb-mm-TGu">
+                                            <rect key="frame" x="325" y="2" width="58" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" systemColor="systemPinkColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="trash.circle.fill" catalog="system"/>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="date_fin" destination="fbh-vr-Uxi" id="59M-uX-GWh"/>
-                                    <outlet property="depense_date" destination="fbh-vr-Uxi" id="j9e-sR-mFV"/>
-                                    <outlet property="depense_prix" destination="hAX-Ks-21B" id="Qu7-Nn-Bq7"/>
-                                    <outlet property="depense_type" destination="be6-de-ujZ" id="nY2-7F-ja9"/>
+                                    <outlet property="deleteConvention" destination="nGb-mm-TGu" id="4z6-ly-CmS"/>
                                     <outlet property="montant_convention" destination="hAX-Ks-21B" id="2tH-Bd-6gj"/>
                                     <outlet property="nom_convention" destination="be6-de-ujZ" id="nJK-0H-cGD"/>
                                     <outlet property="nom_fournisseur" destination="ESE-cM-Tu4" id="lPL-6O-rEm"/>
@@ -811,6 +823,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         <image name="City skyline" width="1280" height="853"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -825,6 +838,9 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -16,6 +16,7 @@ class ConventionTableViewCell: UITableViewCell {
     @IBOutlet weak var montant_convention: UILabel!
     @IBOutlet weak var date_fin: UILabel!
     
+    @IBOutlet weak var deleteConvention: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,7 +29,7 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
             self.apiData =  data
             //print("loadData : \(data)")
             //print(self.depensesAPI)
-            //self.tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
@@ -56,28 +57,26 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-//        if(displayType == 0)
-//        {
-//            return DepenseDAO.shared.getByNomProjet(project_name: _projectName).count
-//        } else
-//        {
-//            return DepenseDAO.shared.getByNomBanque(banque_name: _compteName).count
-//        }
         return apiData.count
     }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 100.0;//Your custom row height
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConventionCellIdentifier", for: indexPath) as! ConventionTableViewCell
         
-        let convention = apiData.sorted(by: { $0.date_fin! < $1.date_fin!})[indexPath.row]
+        print(apiData)
+        let convention = apiData.sorted(by: { $0.date_fin < $1.date_fin})[indexPath.row]
+        print(convention.type_convention)
         
-        cell.date_fin.text = convention.date_fin?.formatted()
+        cell.date_fin.text = convention.date_fin.formatted()
         cell.nom_convention.text = convention.type_convention
-        cell.nom_fournisseur = convention.fournisseur
-        cell.montant_convention = "\(String(describing: convention.date_fin)) $"
+        cell.nom_fournisseur.text = convention.fournisseur
+        cell.montant_convention.text = "\(String(describing: convention.date_fin)) $"
         return cell
     }
 }
