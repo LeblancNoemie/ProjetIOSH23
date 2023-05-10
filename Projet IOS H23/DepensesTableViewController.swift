@@ -41,7 +41,7 @@ class DepenseTableViewCell: UITableViewCell {
                                           handler: {(_: UIAlertAction!) in
                                             //Sign out action
             }))
-        self.present(alert, animated: true)
+        //self.present(alert, animated: true)
     }
     override func awakeFromNib() {
         super.awakeFromNib()
