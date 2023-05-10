@@ -22,7 +22,6 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         DispatchQueue.main.async {
             self.apiDepense = data
             self.fillGraphDepense()
-            print("ok")
         }
     }
     var apiDepense: [aDepense] = []
@@ -70,11 +69,7 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
             yValuesData.append(c.prix)
         }
         
-        yValuesData = [1,2,3]
-        
-        print("yesyes")
-        
-        let conventionEntries = [BarChartDataEntry(x:1,  yValues: yValuesData)]
+        let conventionEntries = [BarChartDataEntry(x:2,  yValues: yValuesData)]
         let conventionDataSet = BarChartDataSet(entries: conventionEntries, label: "Conventions")
         conventionDataSet.colors = [.cyan, .blue, .purple]
         
