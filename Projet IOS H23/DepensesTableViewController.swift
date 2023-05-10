@@ -7,7 +7,9 @@
 
 import UIKit
 
-
+protocol CustomTableViewDelegate{
+    func refresh()
+}
 
 class DepenseTableViewCell: UITableViewCell {
     
@@ -15,41 +17,67 @@ class DepenseTableViewCell: UITableViewCell {
     @IBOutlet weak var type_paiement: UILabel!
     @IBOutlet weak var date_paiement: UILabel!
     @IBOutlet weak var montant_depense: UILabel!
-    
     @IBOutlet weak var deleteDepense: UIButton!
+    
+    var depenseId : String = ""
+    //var table : UITableView
+    var delegate : CustomTableViewDelegate?
+    
+    @IBAction func deleteAction(_ sender: Any) {
+        print(depenseId)
+        let depensesAPI =  DepenseRestAPI()
+        depensesAPI.deleteDepense(id: depenseId)
+        //Fonctionnel mais ne refresh pas la liste
+        self.delegate?.refresh()
+        
+        
+        let alert = UIAlertController(title: "Sign out?", message: "You can always access your content by signing back in",         preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+                //Cancel Action
+            }))
+        alert.addAction(UIAlertAction(title: "Sign out",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {(_: UIAlertAction!) in
+                                            //Sign out action
+            }))
+        //self.present(alert, animated: true)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 }
 
-class DepensesTableViewController: UITableViewController, WhenDepensesReady {
+class DepensesTableViewController: UITableViewController, WhenDepensesReady, CustomTableViewDelegate {
+    func refresh() {
+        print("You are in CustomTableViewDelegate")
+        self.tableView.reloadData()
+    }
+    
     var _projectName : String = ""
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
+    
     func loadData(data: [aDepense]) {
         DispatchQueue.main.async {
             self.apiData =  data
-            print("loadData : \(data)")
-            //print(self.depensesAPI)
-            print(self.apiData[1].date_paiement.formatted())
             self.tableView.reloadData()
         }
     }
     var apiData:[aDepense] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Data received: \(_projectName)")
         let depensesAPI =  DepenseRestAPI()
         depensesAPI.whenDepensesReady = self
         depensesAPI.getAllData()
-        print(apiData)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -59,7 +87,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 100.0;//Your custom row height
+        return 100.0;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,15 +95,18 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DepenseCellIdentifier", for: indexPath) as! DepenseTableViewCell
         
         let depense = apiData.sorted(by: {$0.date_paiement < $1.date_paiement})[indexPath.row]
-        print("La date trouvée est: \(depense.date_paiement)")
         cell.date_paiement.text = String(depense.date_paiement.formatted())
         cell.montant_depense.text = "\(String(describing: depense.prix)) $"
         cell.nom_depense.text = depense.type_depense
         cell.type_paiement.text = depense.mode_paiement
+        cell.depenseId = depense.id
+        cell.delegate = self
         return cell
     }
     
 
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

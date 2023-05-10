@@ -76,7 +76,7 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
         cell.date_fin.text = convention.date_fin.formatted()
         cell.nom_convention.text = convention.type_convention
         cell.nom_fournisseur.text = convention.fournisseur
-        cell.montant_convention.text = "\(String(describing: convention.date_fin)) $"
+        cell.montant_convention.text = "\(String(describing: convention.prix)) $"
         return cell
     }
 }
