@@ -78,7 +78,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.11485895860000001" green="0.3772464921" blue="0.67162197150000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Gerer mon budget" cornerStyle="large">
+                                <buttonConfiguration key="configuration" style="filled" title="Voir l'échéancier" cornerStyle="large">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="27"/>
                                     <color key="baseBackgroundColor" red="0.1137390509" green="0.37579953669999999" blue="0.67158251999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
@@ -471,31 +471,8 @@
                                     <segue destination="Xnh-NM-N7f" kind="show" identifier="VersTBRBC" id="zt5-ES-v3v"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Échéancier(s):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1l-Ci-8nt">
-                                <rect key="frame" x="35" y="418" width="167" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-e3-N8s">
-                                <rect key="frame" x="35" y="459" width="312" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Phasellus volutpat diam a velit accumsan aliquam.
-Etiam eget tortor id turpis pretium faucibus in nec velit.
-Proin bibendum arcu in est tempus, at dapibus metus porttitor.
-Quisque scelerisque lectus rutrum purus gravida suscipit.
-Ut sodales arcu sit amet lorem sagittis venenatis.
-Sed eu ex consequat, ullamcorper dui sit amet, congue risus.
-Nullam nec nisl ut mauris cursus hendrerit.
-Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" systemColor="systemGray2Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes comptes" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-R7-REE">
-                                <rect key="frame" x="35" y="146" width="262" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes échéances" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-R7-REE">
+                                <rect key="frame" x="35" y="146" width="318" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -509,7 +486,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vm3-nx-Z1C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-897" y="856"/>
+            <point key="canvasLocation" x="-897.10144927536237" y="855.80357142857144"/>
         </scene>
         <!--Depenses Table View Controller-->
         <scene sceneID="kFv-2A-GFA">
@@ -822,9 +799,8 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gXa-gL-j81"/>
-        <segue reference="211-vW-FMD"/>
-        <segue reference="yWM-Wx-mPo"/>
+        <segue reference="rEV-AZ-13p"/>
+        <segue reference="Snh-av-yDO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Blurred City skyline" width="1280" height="853"/>
@@ -837,9 +813,6 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

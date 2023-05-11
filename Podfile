@@ -7,4 +7,5 @@ target 'Projet IOS H23' do
 
   # Pods for Projet IOS H23
 	pod 'Charts', '4.1.0'
+  pod 'FSCalendar'
 end
