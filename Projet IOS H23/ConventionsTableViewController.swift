@@ -7,7 +7,9 @@
 
 import UIKit
 
-
+protocol ConventionTableViewCellDelegate:AnyObject{
+    func didButtonTap(itemId: String)
+}
 
 class ConventionTableViewCell: UITableViewCell {
 
@@ -15,26 +17,47 @@ class ConventionTableViewCell: UITableViewCell {
     @IBOutlet weak var nom_fournisseur: UILabel!
     @IBOutlet weak var montant_convention: UILabel!
     @IBOutlet weak var date_fin: UILabel!
-    
     @IBOutlet weak var deleteConvention: UIButton!
+    
+    var conventionId : String = ""
+    weak var delegate : (ConventionTableViewCellDelegate)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    @IBAction func onDeleteConventionClick(_ sender: Any) {
+        delegate!.didButtonTap(itemId: conventionId)
+    }
 }
 
-class ConventionsTableViewController: UITableViewController, WhenConventionsReady {
+class ConventionsTableViewController: UITableViewController, WhenConventionsReady, ConventionTableViewCellDelegate {
+    func didButtonTap(itemId: String) {
+        print("found: \(itemId)")
+        let alert = UIAlertController(title: "Supprimer une convention", message: "Etes-vous certain de vouloir supprimer cette convention? Les changements ne pourront pas être réversés.",         preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Supprimer", style: UIAlertAction.Style.destructive, handler: { _ in
+            var webApi : ConventionsRestAPI = ConventionsRestAPI()
+            webApi.deleteConvention(id: itemId)
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Annuler",
+                                      style: UIAlertAction.Style.cancel,
+                                      handler: {(_: UIAlertAction!) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     func loadData(data: [aConvention]) {
         DispatchQueue.main.async {
             self.apiData =  data
-            //print("loadData : \(data)")
-            //print(self.depensesAPI)
             self.tableView.reloadData()
         }
     }
     
 
     var _projectName : String = ""
+    var _projetId : String = ""
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
     
@@ -45,14 +68,10 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
         print("Data received: \(_projectName)")
         let conventionsAPI =  ConventionsRestAPI()
         conventionsAPI.whenConventionsReady = self
-        conventionsAPI.getAllData()
-        
+        conventionsAPI.getConventionBy(condition: "projetId", value: _projetId)
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -77,6 +96,8 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
         cell.nom_convention.text = convention.type_convention
         cell.nom_fournisseur.text = convention.fournisseur
         cell.montant_convention.text = "\(String(describing: convention.prix)) $"
+        cell.conventionId = convention.id
+        cell.delegate = self
         return cell
     }
 }

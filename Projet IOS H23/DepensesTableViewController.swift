@@ -24,7 +24,6 @@ class DepenseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     @IBAction func onDeleteClick(_ sender: Any) {
         delegate?.didButtonTap(itemId: depenseId)
@@ -33,9 +32,7 @@ class DepenseTableViewCell: UITableViewCell {
 
 class DepensesTableViewController: UITableViewController, WhenDepensesReady, DepenseTableViewCellDelegate {
     func didButtonTap(itemId: String) {
-        print("Hello! I found this item: \(itemId)")
         let alert = UIAlertController(title: "Supprimer une dépense", message: "Etes-vous certain de vouloir supprimer cette dépense? Les changements ne pourront pas être réversés.",         preferredStyle: UIAlertController.Style.alert)
-
         alert.addAction(UIAlertAction(title: "Supprimer", style: UIAlertAction.Style.destructive, handler: { _ in
             var webApi : DepenseRestAPI = DepenseRestAPI()
             webApi.deleteDepense(id: itemId)
@@ -44,12 +41,12 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady, Dep
         alert.addAction(UIAlertAction(title: "Annuler",
                                       style: UIAlertAction.Style.cancel,
                                       handler: {(_: UIAlertAction!) in
-                                        //Sign out action
         }))
         self.present(alert, animated: true, completion: nil)
     }
     
     var _projectName : String = ""
+    var _projectID : String = ""
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
     
@@ -66,7 +63,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady, Dep
         print("Data received: \(_projectName)")
         let depensesAPI =  DepenseRestAPI()
         depensesAPI.whenDepensesReady = self
-        depensesAPI.getAllData()
+        depensesAPI.getDepensesBy(condition: "projetId", value: _projectID)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
