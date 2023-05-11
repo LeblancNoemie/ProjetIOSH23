@@ -47,6 +47,10 @@ class Compte2ViewController: UIViewController, WhenConventionsReady, FSCalendarD
         {
             datesToHighlight.append(dateFormatter.string(from: c.date_fin))
         }
+        
+        datesToHighlight.append("2023-05-15")
+        datesToHighlight.append("2023-05-20")
+        datesToHighlight.append("2023-05-25")
         /*
         for date in datesToHighlight
         {
