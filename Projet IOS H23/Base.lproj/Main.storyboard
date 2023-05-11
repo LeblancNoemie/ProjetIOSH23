@@ -557,7 +557,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5e-ic-VSb">
-                                            <rect key="frame" x="332" y="0.0" width="58" height="39"/>
+                                            <rect key="frame" x="332" y="0.0" width="58" height="71"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" systemColor="systemPinkColor"/>
                                             <state key="normal" title="Button"/>
@@ -787,11 +787,15 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                             <color key="tintColor" systemColor="systemPinkColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="trash.circle.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="onDeleteConventionClick:" destination="Cfn-5C-No3" eventType="touchUpInside" id="VVi-sS-wxH"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="date_fin" destination="fbh-vr-Uxi" id="59M-uX-GWh"/>
+                                    <outlet property="deleteConvention" destination="nGb-mm-TGu" id="8zT-J3-rr1"/>
                                     <outlet property="montant_convention" destination="hAX-Ks-21B" id="2tH-Bd-6gj"/>
                                     <outlet property="nom_convention" destination="be6-de-ujZ" id="nJK-0H-cGD"/>
                                     <outlet property="nom_fournisseur" destination="ESE-cM-Tu4" id="lPL-6O-rEm"/>
