@@ -34,6 +34,19 @@ class DepenseTableViewCell: UITableViewCell {
 class DepensesTableViewController: UITableViewController, WhenDepensesReady, DepenseTableViewCellDelegate {
     func didButtonTap(itemId: String) {
         print("Hello! I found this item: \(itemId)")
+        let alert = UIAlertController(title: "Supprimer une dépense", message: "Etes-vous certain de vouloir supprimer cette dépense? Les changements ne pourront pas être réversés.",         preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Supprimer", style: UIAlertAction.Style.destructive, handler: { _ in
+            var webApi : DepenseRestAPI = DepenseRestAPI()
+            webApi.deleteDepense(id: itemId)
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Annuler",
+                                      style: UIAlertAction.Style.cancel,
+                                      handler: {(_: UIAlertAction!) in
+                                        //Sign out action
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     var _projectName : String = ""
