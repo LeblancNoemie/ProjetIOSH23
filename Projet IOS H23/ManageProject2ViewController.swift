@@ -48,6 +48,8 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         for d: aDepense in apiDepense
         {
             yValuesData.append(d.prix)
+            
+            totalPrice += d.prix
         }
         
         let depenseEntries = [BarChartDataEntry(x: 1, yValues: yValuesData)]
@@ -67,6 +69,8 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         for c in apiConvention
         {
             yValuesData.append(c.prix)
+            
+            totalPrice += c.prix
         }
         
         let conventionEntries = [BarChartDataEntry(x:2,  yValues: yValuesData)]
@@ -91,6 +95,8 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
         barChart.legend.verticalAlignment = .bottom
         barChart.legend.textColor = .white
         barChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+        
+        totalPriceLabel.text = "\(round(totalPrice*100)/100)$"
     }
     
     var projectID: String = ""
@@ -142,6 +148,8 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
             }
         }
     
+    var totalPrice: Double = 0
+    @IBOutlet weak var totalPriceLabel: UILabel!
     
     @IBOutlet weak var barChart: BarChartView!
 }
