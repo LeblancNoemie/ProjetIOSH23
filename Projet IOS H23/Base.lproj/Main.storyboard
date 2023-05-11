@@ -513,7 +513,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         <scene sceneID="kFv-2A-GFA">
             <objects>
                 <tableViewController id="Xnh-NM-N7f" customClass="DepensesTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="qHp-Ch-JVB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="qHp-Ch-JVB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
@@ -571,8 +571,6 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
                                 <connections>
                                     <outlet property="date_paiement" destination="F2N-30-UEI" id="FGS-dB-EuM"/>
                                     <outlet property="deleteDepense" destination="n5e-ic-VSb" id="Nau-r9-SN7"/>
-                                    <outlet property="depense_prix" destination="ZUU-cE-bI6" id="Asd-F1-h4i"/>
-                                    <outlet property="depense_type" destination="Qsi-6u-lBO" id="REy-7U-V2z"/>
                                     <outlet property="montant_depense" destination="ZUU-cE-bI6" id="plg-my-icK"/>
                                     <outlet property="nom_depense" destination="Qsi-6u-lBO" id="doG-sc-EWy"/>
                                     <outlet property="type_paiement" destination="Rwj-QR-ijF" id="7O1-aI-CAC"/>
@@ -735,7 +733,7 @@ Morbi commodo neque quis nunc posuere, et vestibulum enim vulputate.</string>
         <scene sceneID="7ON-xJ-rK8">
             <objects>
                 <tableViewController id="2bw-wb-6Bw" customClass="ConventionsTableViewController" customModule="Projet_IOS_H23" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="OR8-w9-rut">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="OR8-w9-rut">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
