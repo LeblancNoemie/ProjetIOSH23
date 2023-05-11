@@ -125,6 +125,7 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
 //                }else{
                     let destination = segue.destination as? DepensesTableViewController
                     destination?._projectName = projectName
+                    destination?._projectID = projectID
                 //}
             }
         if segue.identifier == "showProjectConventions"{
@@ -138,6 +139,7 @@ class ManageProject2ViewController: UIViewController, WhenDepensesReady, WhenCon
 //                }else{
                     let destination = segue.destination as? ConventionsTableViewController
                     destination?._projectName = projectName
+                    destination?._projetId = projectID
                 //}
             }
         }

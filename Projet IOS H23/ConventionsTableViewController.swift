@@ -57,6 +57,7 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
     
 
     var _projectName : String = ""
+    var _projetId : String = ""
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
     
@@ -67,8 +68,7 @@ class ConventionsTableViewController: UITableViewController, WhenConventionsRead
         print("Data received: \(_projectName)")
         let conventionsAPI =  ConventionsRestAPI()
         conventionsAPI.whenConventionsReady = self
-        conventionsAPI.getAllData()
-        
+        conventionsAPI.getConventionBy(condition: "projetId", value: _projetId)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

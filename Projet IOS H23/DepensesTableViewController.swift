@@ -46,6 +46,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady, Dep
     }
     
     var _projectName : String = ""
+    var _projectID : String = ""
     var displayType : Int16 = 0 //0 => projet; 1 => Compte
     var _compteName : String = ""
     
@@ -62,7 +63,7 @@ class DepensesTableViewController: UITableViewController, WhenDepensesReady, Dep
         print("Data received: \(_projectName)")
         let depensesAPI =  DepenseRestAPI()
         depensesAPI.whenDepensesReady = self
-        depensesAPI.getAllData()
+        depensesAPI.getDepensesBy(condition: "projetId", value: _projectID)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
