@@ -14,6 +14,7 @@ class Compte2ViewController: UIViewController, WhenConventionsReady, FSCalendarD
         DispatchQueue.main.async {
             self.apiConventions = data
             self.highlightDates()
+            self.calendar.reloadData()
         }
     }
     var apiConventions: [aConvention] = []
@@ -35,13 +36,18 @@ class Compte2ViewController: UIViewController, WhenConventionsReady, FSCalendarD
     
     @IBOutlet weak var calendar: FSCalendar!
     
+    var datesToHighlight: [String] = []
+    
     func highlightDates()
     {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let datesToHighlight = ["2023-05-15", "2023-05-20", "2023-05-25"]
-        
+        for c in apiConventions
+        {
+            datesToHighlight.append(dateFormatter.string(from: c.date_fin))
+        }
+        /*
         for date in datesToHighlight
         {
             if let highlightedDate = dateFormatter.date(from: date)
@@ -49,6 +55,7 @@ class Compte2ViewController: UIViewController, WhenConventionsReady, FSCalendarD
                 calendar.select(highlightedDate)
             }
         }
+         */
     }
     
     func prepCalendar()
@@ -70,13 +77,16 @@ class Compte2ViewController: UIViewController, WhenConventionsReady, FSCalendarD
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
+        return datesToHighlight.contains(dateFormatter.string(from: date)) ? .white : nil
         //return date == dateFormatter.date(from: "2023-05-15") ? UIColor.green : UIColor.red
-        
-        return calendar.selectedDates.contains(date) ? UIColor.white : UIColor.black
+        //return calendar.selectedDates.contains(date) ? UIColor.white : UIColor.black
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        return calendar.selectedDates.contains(date) ? UIColor.orange : nil
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        return datesToHighlight.contains(dateFormatter.string(from: date)) ? .orange : nil
     }
     
     // - - -
