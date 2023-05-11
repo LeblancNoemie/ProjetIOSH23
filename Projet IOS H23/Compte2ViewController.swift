@@ -9,22 +9,27 @@ import UIKit
 import FSCalendar
 
 
-class Compte2ViewController: UIViewController, WhenComptesReady, FSCalendarDataSource, FSCalendarDelegate {
-
-    func loadData(data: [aCompte]) {
+class Compte2ViewController: UIViewController, WhenConventionsReady, FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+    func loadData(data: [aConvention]) {
         DispatchQueue.main.async {
-            self.comptes =  data
-            //self.tableView.reloadData()
+            self.apiConventions = data
+            self.highlightDates()
         }
     }
-    var comptes:[aCompte] = []
-    
+    var apiConventions: [aConvention] = []
+
     // - - -
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepCalendar()    }
+        let conventionAPI = ConventionsRestAPI()
+        conventionAPI.whenConventionsReady = self
+        conventionAPI.getAllData()
+        
+        prepCalendar()
+        
+    }
 
     // - - -
     
@@ -33,7 +38,7 @@ class Compte2ViewController: UIViewController, WhenComptesReady, FSCalendarDataS
     func highlightDates()
     {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let datesToHighlight = ["2023-05-15", "2023-05-20", "2023-05-25"]
         
@@ -62,11 +67,16 @@ class Compte2ViewController: UIViewController, WhenComptesReady, FSCalendarDataS
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        //return date == dateFormatter.date(from: "2023-05-15") ? UIColor.green : UIColor.red
+        
         return calendar.selectedDates.contains(date) ? UIColor.white : UIColor.black
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        return calendar.selectedDates.contains(date) ? UIColor.red : nil
+        return calendar.selectedDates.contains(date) ? UIColor.orange : nil
     }
     
     // - - -
